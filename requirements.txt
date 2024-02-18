@@ -1,0 +1,8 @@
+djangorestframework
+django-filter
+djangorestframework-simplejwt
+drf-nested-routers
+django-cors-headers
+markdown
+drf_yasg
+drf_spectacular
