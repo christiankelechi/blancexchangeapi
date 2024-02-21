@@ -11,7 +11,7 @@ import uuid
 from django.http import Http404
 from django.core.exceptions import ObjectDoesNotExist
 # Create your models here.
-
+import hashlib
 class UserManager(BaseUserManager):
     def get_object_by_public_id(self, public_id):
         try:
@@ -68,16 +68,18 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_staff = models.BooleanField(default=False)  # Add this line
     created = models.DateTimeField(auto_now=True)
     updated = models.DateTimeField(auto_now_add=True,null=True,blank=True)
-
-    
+    confirm_password=models.CharField(max_length=1000,null=True,blank=True)
+    # confirm_password=hashlib.sha256(str(confirm_password).encode()).hexdigest()
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username']
-
     objects = UserManager()
 
     def __str__(self):
         return f"{self.email}"
-
+    def save(self, *args, **kwargs):
+        if self.confirm_password:
+            self.confirm_password = hashlib.sha256(str(self.confirm_password).encode()).hexdigest()
+        super().save(*args, **kwargs)
     @property
     def name(self):
         return f"{self.first_name} {self.last_name}"

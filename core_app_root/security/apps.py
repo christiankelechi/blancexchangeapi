@@ -3,4 +3,5 @@ from django.apps import AppConfig
 
 class SecurityConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'security'
+    name = 'core_app_root.security'
+    label='core_app_root_security'
