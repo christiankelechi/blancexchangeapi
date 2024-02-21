@@ -5978,7 +5978,7 @@
         "kind": 6,
         "importPath": "core_app_root.security.auth.serializer.register",
         "description": "core_app_root.security.auth.serializer.register",
-        "peekOfCode": "class RegisterSerializer(UserSerializer):\n    password = serializers.CharField(max_length=128, min_length=4, required=True)\n    confirm_password=serializers.CharField(max_length=128,min_length=4,required=True)\n    class Meta:\n        model = User\n        fields = ['id','email', 'username','first_name','last_name','country','password','confirm_password']\n    def create(self, validated_data):\n        return User.objects.create_user(**validated_data)",
+        "peekOfCode": "class RegisterSerializer(UserSerializer):\n    password = serializers.CharField(max_length=128, min_length=4, required=True)\n    confirm_password=serializers.CharField(max_length=128,min_length=4,required=True)\n    class Meta:\n        model = User\n        fields = ['id','email', 'username','password','confirm_password']\n    def create(self, validated_data):\n        return User.objects.create_user(**validated_data)",
         "detail": "core_app_root.security.auth.serializer.register",
         "documentation": {}
     },
