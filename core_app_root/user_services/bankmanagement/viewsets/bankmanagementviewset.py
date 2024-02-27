@@ -25,7 +25,7 @@ class BankManagementViewset(viewsets.ModelViewSet):
 class UserBankDetailsViewset(viewsets.ModelViewSet):
     serializer_class=UserBankDetailsSerializer
     permission_classes=[permissions.IsAuthenticated]
-    http_method_names=['get']
+    http_method_names=['get','post']
     
     def create(self,request):
         serializer=self.serializer_class(data=request.data)
