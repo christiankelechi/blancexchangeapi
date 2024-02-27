@@ -5,7 +5,7 @@ class UserBankAccountDetails(models.Model):
     user=models.ForeignKey(User,on_delete=models.CASCADE)
     bank_code=models.CharField(max_length=2000,null=True,blank=True)
     account_number=models.CharField(max_length=2000)
-    
+    account_name=models.CharField(max_length=2000,null=True,blank=True)
     
 class BankAdminManager(models.Model):
     bank_code=models.CharField(max_length=1000,null=True,blank=True)
