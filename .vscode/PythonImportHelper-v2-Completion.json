@@ -234,35 +234,19 @@
         "documentation": {}
     },
     {
-        "label": "path",
-        "importPath": "django.urls",
-        "description": "django.urls",
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
         "isExtraImport": true,
-        "detail": "django.urls",
+        "detail": "django.contrib",
         "documentation": {}
     },
     {
-        "label": "path",
-        "importPath": "django.urls",
-        "description": "django.urls",
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
         "isExtraImport": true,
-        "detail": "django.urls",
-        "documentation": {}
-    },
-    {
-        "label": "re_path",
-        "importPath": "django.urls",
-        "description": "django.urls",
-        "isExtraImport": true,
-        "detail": "django.urls",
-        "documentation": {}
-    },
-    {
-        "label": "include",
-        "importPath": "django.urls",
-        "description": "django.urls",
-        "isExtraImport": true,
-        "detail": "django.urls",
+        "detail": "django.contrib",
         "documentation": {}
     },
     {
@@ -306,6 +290,22 @@
         "documentation": {}
     },
     {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "re_path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
         "label": "include",
         "importPath": "django.urls",
         "description": "django.urls",
@@ -327,6 +327,38 @@
         "description": "django.urls",
         "isExtraImport": true,
         "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "include",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
         "documentation": {}
     },
     {
@@ -883,6 +915,46 @@
         "documentation": {}
     },
     {
+        "label": "serializers",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "viewsets",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "permissions",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "routers",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
         "label": "get_wsgi_application",
         "importPath": "django.core.wsgi",
         "description": "django.core.wsgi",
@@ -1337,6 +1409,14 @@
         "isExtraImport": true,
         "importPath": "rest_framework.response",
         "description": "rest_framework.response",
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
         "detail": "rest_framework.response",
         "documentation": {}
     },
@@ -2882,6 +2962,38 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -4311,6 +4423,86 @@
         "documentation": {}
     },
     {
+        "label": "JSONDecodeError",
+        "importPath": "requests.exceptions",
+        "description": "requests.exceptions",
+        "isExtraImport": true,
+        "detail": "requests.exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "BankAdminManager",
+        "importPath": "core_app_root.user_services.bankmanagement.models",
+        "description": "core_app_root.user_services.bankmanagement.models",
+        "isExtraImport": true,
+        "detail": "core_app_root.user_services.bankmanagement.models",
+        "documentation": {}
+    },
+    {
+        "label": "UserBankAccountDetails",
+        "importPath": "core_app_root.user_services.bankmanagement.models",
+        "description": "core_app_root.user_services.bankmanagement.models",
+        "isExtraImport": true,
+        "detail": "core_app_root.user_services.bankmanagement.models",
+        "documentation": {}
+    },
+    {
+        "label": "BankAdminManager",
+        "importPath": "core_app_root.user_services.bankmanagement.models",
+        "description": "core_app_root.user_services.bankmanagement.models",
+        "isExtraImport": true,
+        "detail": "core_app_root.user_services.bankmanagement.models",
+        "documentation": {}
+    },
+    {
+        "label": "UserBankAccountDetails",
+        "importPath": "core_app_root.user_services.bankmanagement.models",
+        "description": "core_app_root.user_services.bankmanagement.models",
+        "isExtraImport": true,
+        "detail": "core_app_root.user_services.bankmanagement.models",
+        "documentation": {}
+    },
+    {
+        "label": "BankAdminManager",
+        "importPath": "core_app_root.user_services.bankmanagement.models",
+        "description": "core_app_root.user_services.bankmanagement.models",
+        "isExtraImport": true,
+        "detail": "core_app_root.user_services.bankmanagement.models",
+        "documentation": {}
+    },
+    {
+        "label": "BankManagementSerializer",
+        "importPath": "core_app_root.user_services.bankmanagement.serializers.bankmanagementserializer",
+        "description": "core_app_root.user_services.bankmanagement.serializers.bankmanagementserializer",
+        "isExtraImport": true,
+        "detail": "core_app_root.user_services.bankmanagement.serializers.bankmanagementserializer",
+        "documentation": {}
+    },
+    {
+        "label": "UserBankDetailsSerializer",
+        "importPath": "core_app_root.user_services.bankmanagement.serializers.bankmanagementserializer",
+        "description": "core_app_root.user_services.bankmanagement.serializers.bankmanagementserializer",
+        "isExtraImport": true,
+        "detail": "core_app_root.user_services.bankmanagement.serializers.bankmanagementserializer",
+        "documentation": {}
+    },
+    {
+        "label": "BankManagementViewset",
+        "importPath": "core_app_root.user_services.bankmanagement.viewsets.bankmanagementviewset",
+        "description": "core_app_root.user_services.bankmanagement.viewsets.bankmanagementviewset",
+        "isExtraImport": true,
+        "detail": "core_app_root.user_services.bankmanagement.viewsets.bankmanagementviewset",
+        "documentation": {}
+    },
+    {
+        "label": "UserBankDetailsViewset",
+        "importPath": "core_app_root.user_services.bankmanagement.viewsets.bankmanagementviewset",
+        "description": "core_app_root.user_services.bankmanagement.viewsets.bankmanagementviewset",
+        "isExtraImport": true,
+        "detail": "core_app_root.user_services.bankmanagement.viewsets.bankmanagementviewset",
+        "documentation": {}
+    },
+    {
         "label": "application",
         "kind": 5,
         "importPath": "blankexchange.asgi",
@@ -4324,7 +4516,7 @@
         "kind": 5,
         "importPath": "blankexchange.settings",
         "description": "blankexchange.settings",
-        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-cikg1lw$219%t5l=6lz*dj#bi$@3456iz2h6p%oj7p$ngq$&uh'\n# SECURITY WARNING: don't run with debug turned on in production!\n# DEBUG = True\nDEBUG = False\nALLOWED_HOSTS = ['192.168.186.107','*']\n# Application definition",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-cikg1lw$219%t5l=6lz*dj#bi$@3456iz2h6p%oj7p$ngq$&uh'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\n# DEBUG = False\nALLOWED_HOSTS = ['192.168.186.107','*']\n# Application definition",
         "detail": "blankexchange.settings",
         "documentation": {}
     },
@@ -4333,7 +4525,7 @@
         "kind": 5,
         "importPath": "blankexchange.settings",
         "description": "blankexchange.settings",
-        "peekOfCode": "SECRET_KEY = 'django-insecure-cikg1lw$219%t5l=6lz*dj#bi$@3456iz2h6p%oj7p$ngq$&uh'\n# SECURITY WARNING: don't run with debug turned on in production!\n# DEBUG = True\nDEBUG = False\nALLOWED_HOSTS = ['192.168.186.107','*']\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',",
+        "peekOfCode": "SECRET_KEY = 'django-insecure-cikg1lw$219%t5l=6lz*dj#bi$@3456iz2h6p%oj7p$ngq$&uh'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\n# DEBUG = False\nALLOWED_HOSTS = ['192.168.186.107','*']\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',",
         "detail": "blankexchange.settings",
         "documentation": {}
     },
@@ -4342,7 +4534,7 @@
         "kind": 5,
         "importPath": "blankexchange.settings",
         "description": "blankexchange.settings",
-        "peekOfCode": "DEBUG = False\nALLOWED_HOSTS = ['192.168.186.107','*']\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
+        "peekOfCode": "DEBUG = True\n# DEBUG = False\nALLOWED_HOSTS = ['192.168.186.107','*']\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',",
         "detail": "blankexchange.settings",
         "documentation": {}
     },
@@ -4549,7 +4741,7 @@
         "kind": 5,
         "importPath": "blankexchange.urls",
         "description": "blankexchange.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('swagger<format>/', schema_view.without_ui(cache_timeout=0), name='schema-json'),\n    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),\n    path('',include(('core_app_root.security.user.routers','core_app_root.security.user'))),\n    path('',include(('core_app_root.security.auth.routers','core_app_root.security.auth'))),\n    path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),\n]\nif settings.DEBUG:\n    urlpatterns += static(settings.MEDIA_URL,",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('swagger<format>/', schema_view.without_ui(cache_timeout=0), name='schema-json'),\n    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),\n    path('',include(('core_app_root.security.user.routers','core_app_root.security.user'))),\n    path('',include(('core_app_root.security.auth.routers','core_app_root.security.auth'))),\n    path('bank/',include(('core_app_root.user_services.bankmanagement.routers','core_app_root.user_services.bankmanagement'))),\n    path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),\n]\nif settings.DEBUG:",
         "detail": "blankexchange.urls",
         "documentation": {}
     },
@@ -6363,6 +6555,69 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "core_app_root.user_services.bankmanagement.migrations.0001_initial",
+        "description": "core_app_root.user_services.bankmanagement.migrations.0001_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='BankAdminManager',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
+        "detail": "core_app_root.user_services.bankmanagement.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "core_app_root.user_services.bankmanagement.migrations.0002_bankadminmanager_admin_user",
+        "description": "core_app_root.user_services.bankmanagement.migrations.0002_bankadminmanager_admin_user",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n        ('core_app_root_user_services_bankmanagement', '0001_initial'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='bankadminmanager',\n            name='admin_user',\n            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),",
+        "detail": "core_app_root.user_services.bankmanagement.migrations.0002_bankadminmanager_admin_user",
+        "documentation": {}
+    },
+    {
+        "label": "BankManagementSerializer",
+        "kind": 6,
+        "importPath": "core_app_root.user_services.bankmanagement.serializers.bankmanagementserializer",
+        "description": "core_app_root.user_services.bankmanagement.serializers.bankmanagementserializer",
+        "peekOfCode": "class BankManagementSerializer(serializers.ModelSerializer):\n    class Meta:\n        fields=['bank_code','bank_name']\n        model=BankAdminManager\nclass UserBankDetailsSerializer(serializers.ModelSerializer):\n    class Meta:\n        fields=['bank_code','account_number']\n        model=UserBankAccountDetails",
+        "detail": "core_app_root.user_services.bankmanagement.serializers.bankmanagementserializer",
+        "documentation": {}
+    },
+    {
+        "label": "UserBankDetailsSerializer",
+        "kind": 6,
+        "importPath": "core_app_root.user_services.bankmanagement.serializers.bankmanagementserializer",
+        "description": "core_app_root.user_services.bankmanagement.serializers.bankmanagementserializer",
+        "peekOfCode": "class UserBankDetailsSerializer(serializers.ModelSerializer):\n    class Meta:\n        fields=['bank_code','account_number']\n        model=UserBankAccountDetails",
+        "detail": "core_app_root.user_services.bankmanagement.serializers.bankmanagementserializer",
+        "documentation": {}
+    },
+    {
+        "label": "BankManagementViewset",
+        "kind": 6,
+        "importPath": "core_app_root.user_services.bankmanagement.viewsets.bankmanagementviewset",
+        "description": "core_app_root.user_services.bankmanagement.viewsets.bankmanagementviewset",
+        "peekOfCode": "class BankManagementViewset(viewsets.ModelViewSet):\n    http_method_names=['get']\n    permission_classes=[permissions.IsAuthenticated]\n    serializer_class=BankManagementSerializer\n    def list(self,request):\n        all_banks = BankAdminManager.objects.all()\n# Extract bank names from the queryset\n        bank_names = [bank.bank_name for bank in all_banks]\n        return Response({\"data\":bank_names},status=status.HTTP_200_OK) \nclass UserBankDetailsViewset(viewsets.ModelViewSet):",
+        "detail": "core_app_root.user_services.bankmanagement.viewsets.bankmanagementviewset",
+        "documentation": {}
+    },
+    {
+        "label": "UserBankDetailsViewset",
+        "kind": 6,
+        "importPath": "core_app_root.user_services.bankmanagement.viewsets.bankmanagementviewset",
+        "description": "core_app_root.user_services.bankmanagement.viewsets.bankmanagementviewset",
+        "peekOfCode": "class UserBankDetailsViewset(viewsets.ModelViewSet):\n    serializer_class=UserBankDetailsSerializer\n    permission_classes=[permissions.IsAuthenticated]\n    http_method_names=['get','post']\n    def create(self,request):\n        serializer=self.serializer_class(data=request.data)\n        if serializer.is_valid():\n            print(\"is valid\")\n            import requests\n            from requests.exceptions import JSONDecodeError",
+        "detail": "core_app_root.user_services.bankmanagement.viewsets.bankmanagementviewset",
+        "documentation": {}
+    },
+    {
+        "label": "BankAdminManagerAdmin",
+        "kind": 6,
+        "importPath": "core_app_root.user_services.bankmanagement.admin",
+        "description": "core_app_root.user_services.bankmanagement.admin",
+        "peekOfCode": "class BankAdminManagerAdmin(admin.ModelAdmin):\n    def has_add_permission(self, request):\n        return request.user.is_superuser\n    def has_change_permission(self, request, obj=None):\n        return request.user.is_superuser\n    def has_delete_permission(self, request, obj=None):\n        return request.user.is_superuser\nadmin.site.register(BankAdminManager, BankAdminManagerAdmin)",
+        "detail": "core_app_root.user_services.bankmanagement.admin",
+        "documentation": {}
+    },
+    {
         "label": "BankmanagementConfig",
         "kind": 6,
         "importPath": "core_app_root.user_services.bankmanagement.apps",
@@ -6376,7 +6631,7 @@
         "kind": 6,
         "importPath": "core_app_root.user_services.bankmanagement.models",
         "description": "core_app_root.user_services.bankmanagement.models",
-        "peekOfCode": "class UserBankAccountDetails(models.Model):\n    user=models.ForeignKey(User,on_delete=models.CASCADE)\n    account_name=models.CharField(max_length=20)\n    account_number=models.CharField(max_length=2000)\nclass BankAdminManager(models.Model):\n    bank_code=models.CharField(max_length=1000,null=True,blank=True)\n    bank_name=models.CharField(max_length=5000,null=True,blank=True)",
+        "peekOfCode": "class UserBankAccountDetails(models.Model):\n    user=models.ForeignKey(User,on_delete=models.CASCADE)\n    bank_code=models.CharField(max_length=2000,null=True,blank=True)\n    account_number=models.CharField(max_length=2000)\n    account_name=models.CharField(max_length=2000,null=True,blank=True)\n    bank_name=models.CharField(max_length=2000,null=True,blank=True)\nclass BankAdminManager(models.Model):\n    bank_code=models.CharField(max_length=1000,null=True,blank=True)\n    bank_name=models.CharField(max_length=5000,null=True,blank=True)\n    admin_user = models.ForeignKey(User, on_delete=models.CASCADE,null=True,blank=True)",
         "detail": "core_app_root.user_services.bankmanagement.models",
         "documentation": {}
     },
@@ -6385,7 +6640,7 @@
         "kind": 6,
         "importPath": "core_app_root.user_services.bankmanagement.models",
         "description": "core_app_root.user_services.bankmanagement.models",
-        "peekOfCode": "class BankAdminManager(models.Model):\n    bank_code=models.CharField(max_length=1000,null=True,blank=True)\n    bank_name=models.CharField(max_length=5000,null=True,blank=True)",
+        "peekOfCode": "class BankAdminManager(models.Model):\n    bank_code=models.CharField(max_length=1000,null=True,blank=True)\n    bank_name=models.CharField(max_length=5000,null=True,blank=True)\n    admin_user = models.ForeignKey(User, on_delete=models.CASCADE,null=True,blank=True)\n    def __str__(self):\n        return f\"{self.admin_user} added a new bank details with bank name {self.bank_name} and bank code {self.bank_code}\"",
         "detail": "core_app_root.user_services.bankmanagement.models",
         "documentation": {}
     },

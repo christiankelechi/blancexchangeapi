@@ -6,6 +6,7 @@ class UserBankAccountDetails(models.Model):
     bank_code=models.CharField(max_length=2000,null=True,blank=True)
     account_number=models.CharField(max_length=2000)
     account_name=models.CharField(max_length=2000,null=True,blank=True)
+    bank_name=models.CharField(max_length=2000,null=True,blank=True)
     
 class BankAdminManager(models.Model):
     bank_code=models.CharField(max_length=1000,null=True,blank=True)
