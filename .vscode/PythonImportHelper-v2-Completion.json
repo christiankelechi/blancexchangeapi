@@ -210,6 +210,30 @@
         "documentation": {}
     },
     {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
         "label": "path",
         "importPath": "django.urls",
         "description": "django.urls",
@@ -1894,6 +1918,30 @@
         "documentation": {}
     },
     {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
         "label": "PasswordUpdateSerializer",
         "importPath": "core_root.auth.serializers.passwordreset_serializers",
         "description": "core_root.auth.serializers.passwordreset_serializers",
@@ -2330,43 +2378,27 @@
         "documentation": {}
     },
     {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
         "isExtraImport": true,
-        "detail": "django.db",
+        "detail": "django.apps",
         "documentation": {}
     },
     {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
         "isExtraImport": true,
-        "detail": "django.db",
+        "detail": "django.apps",
         "documentation": {}
     },
     {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
         "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
+        "detail": "django.apps",
         "documentation": {}
     },
     {
@@ -2387,94 +2419,6 @@
     },
     {
         "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
         "importPath": "django.db",
         "description": "django.db",
         "isExtraImport": true,
@@ -2562,7 +2506,15 @@
         "documentation": {}
     },
     {
-        "label": "models",
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
         "importPath": "django.db",
         "description": "django.db",
         "isExtraImport": true,
@@ -2586,111 +2538,7 @@
         "documentation": {}
     },
     {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
         "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
         "importPath": "django.db",
         "description": "django.db",
         "isExtraImport": true,
@@ -2794,6 +2642,142 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -2815,6 +2799,142 @@
         "description": "django.db",
         "isExtraImport": true,
         "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
         "documentation": {}
     },
     {
@@ -3990,6 +4110,15 @@
         "documentation": {}
     },
     {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
         "label": "UserSerializer",
         "importPath": "core_app_root.security.user.serializers.user",
         "description": "core_app_root.security.user.serializers.user",
@@ -4047,6 +4176,14 @@
     },
     {
         "label": "PasswordResetModel",
+        "importPath": "core_app_root.security.user.models",
+        "description": "core_app_root.security.user.models",
+        "isExtraImport": true,
+        "detail": "core_app_root.security.user.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
         "importPath": "core_app_root.security.user.models",
         "description": "core_app_root.security.user.models",
         "isExtraImport": true,
@@ -5947,6 +6084,15 @@
         "documentation": {}
     },
     {
+        "label": "banks",
+        "kind": 5,
+        "importPath": "core_app_root.json_datas.read_bank",
+        "description": "core_app_root.json_datas.read_bank",
+        "peekOfCode": "banks = json.loads(banks_data)\n# Print when the key is '082'\nif \"082\" in banks:\n    print(banks[\"082\"])",
+        "detail": "core_app_root.json_datas.read_bank",
+        "documentation": {}
+    },
+    {
         "label": "LoginSerializerClass",
         "kind": 6,
         "importPath": "core_app_root.security.auth.serializer.login",
@@ -6158,7 +6304,7 @@
         "kind": 5,
         "importPath": "core_app_root.testsnippets.fetchbankname",
         "description": "core_app_root.testsnippets.fetchbankname",
-        "peekOfCode": "secret_key = 'sk_live_7f39f77453508b7b3b71d48e4dc5fdbbdfe9d2e7'\nbase_url = 'https://api.paystack.co'\nimport requests\n# Define your secret key and base URL\nbase_url = 'https://api.paystack.co'\n# Define endpoint and parameters\nendpoint = '/bank/resolve'\nparams = {\n    'account_number': '2104694406',\n    'bank_code': '033'",
+        "peekOfCode": "secret_key = 'sk_live_7f39f77453508b7b3b71d48e4dc5fdbbdfe9d2e7'\nbase_url = 'https://api.paystack.co'\nimport requests\n# Define your secret key and base URL\nbase_url = 'https://api.paystack.co'\n# Define endpoint and parameters\nendpoint = '/bank/resolve'\nparams = {\n    'account_number': '0763039061',\n    'bank_code': '058'",
         "detail": "core_app_root.testsnippets.fetchbankname",
         "documentation": {}
     },
@@ -6167,7 +6313,7 @@
         "kind": 5,
         "importPath": "core_app_root.testsnippets.fetchbankname",
         "description": "core_app_root.testsnippets.fetchbankname",
-        "peekOfCode": "base_url = 'https://api.paystack.co'\nimport requests\n# Define your secret key and base URL\nbase_url = 'https://api.paystack.co'\n# Define endpoint and parameters\nendpoint = '/bank/resolve'\nparams = {\n    'account_number': '2104694406',\n    'bank_code': '033'\n}",
+        "peekOfCode": "base_url = 'https://api.paystack.co'\nimport requests\n# Define your secret key and base URL\nbase_url = 'https://api.paystack.co'\n# Define endpoint and parameters\nendpoint = '/bank/resolve'\nparams = {\n    'account_number': '0763039061',\n    'bank_code': '058'\n}",
         "detail": "core_app_root.testsnippets.fetchbankname",
         "documentation": {}
     },
@@ -6176,7 +6322,7 @@
         "kind": 5,
         "importPath": "core_app_root.testsnippets.fetchbankname",
         "description": "core_app_root.testsnippets.fetchbankname",
-        "peekOfCode": "base_url = 'https://api.paystack.co'\n# Define endpoint and parameters\nendpoint = '/bank/resolve'\nparams = {\n    'account_number': '2104694406',\n    'bank_code': '033'\n}\n# Define headers\nheaders = {\n    'Authorization': f'Bearer {secret_key}'",
+        "peekOfCode": "base_url = 'https://api.paystack.co'\n# Define endpoint and parameters\nendpoint = '/bank/resolve'\nparams = {\n    'account_number': '0763039061',\n    'bank_code': '058'\n}\n# Define headers\nheaders = {\n    'Authorization': f'Bearer {secret_key}'",
         "detail": "core_app_root.testsnippets.fetchbankname",
         "documentation": {}
     },
@@ -6185,7 +6331,7 @@
         "kind": 5,
         "importPath": "core_app_root.testsnippets.fetchbankname",
         "description": "core_app_root.testsnippets.fetchbankname",
-        "peekOfCode": "endpoint = '/bank/resolve'\nparams = {\n    'account_number': '2104694406',\n    'bank_code': '033'\n}\n# Define headers\nheaders = {\n    'Authorization': f'Bearer {secret_key}'\n}\n# Make GET request",
+        "peekOfCode": "endpoint = '/bank/resolve'\nparams = {\n    'account_number': '0763039061',\n    'bank_code': '058'\n}\n# Define headers\nheaders = {\n    'Authorization': f'Bearer {secret_key}'\n}\n# Make GET request",
         "detail": "core_app_root.testsnippets.fetchbankname",
         "documentation": {}
     },
@@ -6194,7 +6340,7 @@
         "kind": 5,
         "importPath": "core_app_root.testsnippets.fetchbankname",
         "description": "core_app_root.testsnippets.fetchbankname",
-        "peekOfCode": "params = {\n    'account_number': '2104694406',\n    'bank_code': '033'\n}\n# Define headers\nheaders = {\n    'Authorization': f'Bearer {secret_key}'\n}\n# Make GET request\nresponse = requests.get(f'{base_url}{endpoint}', params=params, headers=headers)",
+        "peekOfCode": "params = {\n    'account_number': '0763039061',\n    'bank_code': '058'\n}\n# Define headers\nheaders = {\n    'Authorization': f'Bearer {secret_key}'\n}\n# Make GET request\nresponse = requests.get(f'{base_url}{endpoint}', params=params, headers=headers)",
         "detail": "core_app_root.testsnippets.fetchbankname",
         "documentation": {}
     },
@@ -6214,6 +6360,51 @@
         "description": "core_app_root.testsnippets.fetchbankname",
         "peekOfCode": "response = requests.get(f'{base_url}{endpoint}', params=params, headers=headers)\n# Print response\nprint(response.json())",
         "detail": "core_app_root.testsnippets.fetchbankname",
+        "documentation": {}
+    },
+    {
+        "label": "BankmanagementConfig",
+        "kind": 6,
+        "importPath": "core_app_root.user_services.bankmanagement.apps",
+        "description": "core_app_root.user_services.bankmanagement.apps",
+        "peekOfCode": "class BankmanagementConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'core_app_root.user_services.bankmanagement'\n    label= 'core_app_root_user_services_bankmanagement'",
+        "detail": "core_app_root.user_services.bankmanagement.apps",
+        "documentation": {}
+    },
+    {
+        "label": "UserBankAccountDetails",
+        "kind": 6,
+        "importPath": "core_app_root.user_services.bankmanagement.models",
+        "description": "core_app_root.user_services.bankmanagement.models",
+        "peekOfCode": "class UserBankAccountDetails(models.Model):\n    user=models.ForeignKey(User,on_delete=models.CASCADE)\n    account_name=models.CharField(max_length=20)\n    account_number=models.CharField(max_length=2000)\nclass BankAdminManager(models.Model):\n    bank_code=models.CharField(max_length=1000,null=True,blank=True)\n    bank_name=models.CharField(max_length=5000,null=True,blank=True)",
+        "detail": "core_app_root.user_services.bankmanagement.models",
+        "documentation": {}
+    },
+    {
+        "label": "BankAdminManager",
+        "kind": 6,
+        "importPath": "core_app_root.user_services.bankmanagement.models",
+        "description": "core_app_root.user_services.bankmanagement.models",
+        "peekOfCode": "class BankAdminManager(models.Model):\n    bank_code=models.CharField(max_length=1000,null=True,blank=True)\n    bank_name=models.CharField(max_length=5000,null=True,blank=True)",
+        "detail": "core_app_root.user_services.bankmanagement.models",
+        "documentation": {}
+    },
+    {
+        "label": "WalletAppConfig",
+        "kind": 6,
+        "importPath": "core_app_root.user_services.wallet_app.apps",
+        "description": "core_app_root.user_services.wallet_app.apps",
+        "peekOfCode": "class WalletAppConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'core_app_root.user_services.wallet_app'\n    label='core_app_root_user_services_wallet_app'",
+        "detail": "core_app_root.user_services.wallet_app.apps",
+        "documentation": {}
+    },
+    {
+        "label": "UserServicesConfig",
+        "kind": 6,
+        "importPath": "core_app_root.user_services.apps",
+        "description": "core_app_root.user_services.apps",
+        "peekOfCode": "class UserServicesConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'core_app_root.user_services'\n    label= 'core_app_root_user_services'",
+        "detail": "core_app_root.user_services.apps",
         "documentation": {}
     },
     {

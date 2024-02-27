@@ -42,6 +42,7 @@ urlpatterns = [
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('',include(('core_app_root.security.user.routers','core_app_root.security.user'))),
     path('',include(('core_app_root.security.auth.routers','core_app_root.security.auth'))),
+    path('bank/',include(('core_app_root.user_services.bankmanagement.routers','core_app_root.user_services.bankmanagement'))),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 ]
 if settings.DEBUG:

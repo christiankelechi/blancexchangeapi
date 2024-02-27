@@ -13,8 +13,8 @@ base_url = 'https://api.paystack.co'
 # Define endpoint and parameters
 endpoint = '/bank/resolve'
 params = {
-    'account_number': '2104694406',
-    'bank_code': '033'
+    'account_number': '0763039061',
+    'bank_code': '058'
 }
 
 # Define headers

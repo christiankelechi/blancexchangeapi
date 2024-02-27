@@ -24,8 +24,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-cikg1lw$219%t5l=6lz*dj#bi$@3456iz2h6p%oj7p$ngq$&uh'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-DEBUG = False
+DEBUG = True
+# DEBUG = False
 
 
 ALLOWED_HOSTS = ['192.168.186.107','*']
@@ -53,7 +53,10 @@ INSTALLED_APPS = [
     'core_app_root',
     'core_app_root.security',
     'core_app_root.security.user',
-    'core_app_root.security.auth'
+    'core_app_root.security.auth',
+    'core_app_root.user_services',
+    'core_app_root.user_services.bankmanagement',
+    'core_app_root.user_services.wallet_app'
 ]
 
 MIDDLEWARE = [
