@@ -6,6 +6,8 @@ import requests
 from requests.exceptions import JSONDecodeError
 from rest_framework.response import Response
 from rest_framework import status
+from core_app_root.user_services.bankmanagement.models import BankAdminManager,UserBankAccountDetails
+
 # Define your secret key and base URL
 
 import requests
@@ -58,7 +60,9 @@ class UserBankDetailsViewset(viewsets.ModelViewSet):
             # Make GET request
             response = requests.get(f'{base_url}{endpoint}', params=params, headers=headers)
 
-
+            data=response.json()
+            account_name=data['data']['account_name']
+            UserBankAccountDetails.objects.create(account_name=str(account_name),account_number=str(serializer.validated_data['account_number']),bank_name=str(serializer.validated_data['bank_name']))
             return Response({"data":response.json()},status=status.HTTP_200_OK) 
     def get_queryset(self):
         return super().get_queryset()

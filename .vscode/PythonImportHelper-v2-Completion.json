@@ -2994,6 +2994,22 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -4448,6 +4464,22 @@
     },
     {
         "label": "BankAdminManager",
+        "importPath": "core_app_root.user_services.bankmanagement.models",
+        "description": "core_app_root.user_services.bankmanagement.models",
+        "isExtraImport": true,
+        "detail": "core_app_root.user_services.bankmanagement.models",
+        "documentation": {}
+    },
+    {
+        "label": "BankAdminManager",
+        "importPath": "core_app_root.user_services.bankmanagement.models",
+        "description": "core_app_root.user_services.bankmanagement.models",
+        "isExtraImport": true,
+        "detail": "core_app_root.user_services.bankmanagement.models",
+        "documentation": {}
+    },
+    {
+        "label": "UserBankAccountDetails",
         "importPath": "core_app_root.user_services.bankmanagement.models",
         "description": "core_app_root.user_services.bankmanagement.models",
         "isExtraImport": true,
@@ -6496,7 +6528,7 @@
         "kind": 5,
         "importPath": "core_app_root.testsnippets.fetchbankname",
         "description": "core_app_root.testsnippets.fetchbankname",
-        "peekOfCode": "secret_key = 'sk_live_7f39f77453508b7b3b71d48e4dc5fdbbdfe9d2e7'\nbase_url = 'https://api.paystack.co'\nimport requests\n# Define your secret key and base URL\nbase_url = 'https://api.paystack.co'\n# Define endpoint and parameters\nendpoint = '/bank/resolve'\nparams = {\n    'account_number': '0763039061',\n    'bank_code': '058'",
+        "peekOfCode": "secret_key = 'sk_live_7f39f77453508b7b3b71d48e4dc5fdbbdfe9d2e7'\nbase_url = 'https://api.paystack.co'\nimport requests\n# Define your secret key and base URL\nbase_url = 'https://api.paystack.co'\n# Define endpoint and parameters\nendpoint = '/bank/resolve'\nparams = {\n    'account_number': '0761211732',\n    'bank_code': '044'",
         "detail": "core_app_root.testsnippets.fetchbankname",
         "documentation": {}
     },
@@ -6505,7 +6537,7 @@
         "kind": 5,
         "importPath": "core_app_root.testsnippets.fetchbankname",
         "description": "core_app_root.testsnippets.fetchbankname",
-        "peekOfCode": "base_url = 'https://api.paystack.co'\nimport requests\n# Define your secret key and base URL\nbase_url = 'https://api.paystack.co'\n# Define endpoint and parameters\nendpoint = '/bank/resolve'\nparams = {\n    'account_number': '0763039061',\n    'bank_code': '058'\n}",
+        "peekOfCode": "base_url = 'https://api.paystack.co'\nimport requests\n# Define your secret key and base URL\nbase_url = 'https://api.paystack.co'\n# Define endpoint and parameters\nendpoint = '/bank/resolve'\nparams = {\n    'account_number': '0761211732',\n    'bank_code': '044'\n}",
         "detail": "core_app_root.testsnippets.fetchbankname",
         "documentation": {}
     },
@@ -6514,7 +6546,7 @@
         "kind": 5,
         "importPath": "core_app_root.testsnippets.fetchbankname",
         "description": "core_app_root.testsnippets.fetchbankname",
-        "peekOfCode": "base_url = 'https://api.paystack.co'\n# Define endpoint and parameters\nendpoint = '/bank/resolve'\nparams = {\n    'account_number': '0763039061',\n    'bank_code': '058'\n}\n# Define headers\nheaders = {\n    'Authorization': f'Bearer {secret_key}'",
+        "peekOfCode": "base_url = 'https://api.paystack.co'\n# Define endpoint and parameters\nendpoint = '/bank/resolve'\nparams = {\n    'account_number': '0761211732',\n    'bank_code': '044'\n}\n# Define headers\nheaders = {\n    'Authorization': f'Bearer {secret_key}'",
         "detail": "core_app_root.testsnippets.fetchbankname",
         "documentation": {}
     },
@@ -6523,7 +6555,7 @@
         "kind": 5,
         "importPath": "core_app_root.testsnippets.fetchbankname",
         "description": "core_app_root.testsnippets.fetchbankname",
-        "peekOfCode": "endpoint = '/bank/resolve'\nparams = {\n    'account_number': '0763039061',\n    'bank_code': '058'\n}\n# Define headers\nheaders = {\n    'Authorization': f'Bearer {secret_key}'\n}\n# Make GET request",
+        "peekOfCode": "endpoint = '/bank/resolve'\nparams = {\n    'account_number': '0761211732',\n    'bank_code': '044'\n}\n# Define headers\nheaders = {\n    'Authorization': f'Bearer {secret_key}'\n}\n# Make GET request",
         "detail": "core_app_root.testsnippets.fetchbankname",
         "documentation": {}
     },
@@ -6532,7 +6564,7 @@
         "kind": 5,
         "importPath": "core_app_root.testsnippets.fetchbankname",
         "description": "core_app_root.testsnippets.fetchbankname",
-        "peekOfCode": "params = {\n    'account_number': '0763039061',\n    'bank_code': '058'\n}\n# Define headers\nheaders = {\n    'Authorization': f'Bearer {secret_key}'\n}\n# Make GET request\nresponse = requests.get(f'{base_url}{endpoint}', params=params, headers=headers)",
+        "peekOfCode": "params = {\n    'account_number': '0761211732',\n    'bank_code': '044'\n}\n# Define headers\nheaders = {\n    'Authorization': f'Bearer {secret_key}'\n}\n# Make GET request\nresponse = requests.get(f'{base_url}{endpoint}', params=params, headers=headers)",
         "detail": "core_app_root.testsnippets.fetchbankname",
         "documentation": {}
     },
@@ -6570,6 +6602,15 @@
         "description": "core_app_root.user_services.bankmanagement.migrations.0002_bankadminmanager_admin_user",
         "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n        ('core_app_root_user_services_bankmanagement', '0001_initial'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='bankadminmanager',\n            name='admin_user',\n            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),",
         "detail": "core_app_root.user_services.bankmanagement.migrations.0002_bankadminmanager_admin_user",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "core_app_root.user_services.bankmanagement.migrations.0003_userbankaccountdetails_account_name_and_more",
+        "description": "core_app_root.user_services.bankmanagement.migrations.0003_userbankaccountdetails_account_name_and_more",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('core_app_root_user_services_bankmanagement', '0002_bankadminmanager_admin_user'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='userbankaccountdetails',\n            name='account_name',\n            field=models.CharField(blank=True, max_length=2000, null=True),\n        ),",
+        "detail": "core_app_root.user_services.bankmanagement.migrations.0003_userbankaccountdetails_account_name_and_more",
         "documentation": {}
     },
     {
