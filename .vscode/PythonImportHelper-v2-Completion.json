@@ -3010,6 +3010,22 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -6614,6 +6630,15 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "core_app_root.user_services.bankmanagement.migrations.0004_alter_userbankaccountdetails_account_number",
+        "description": "core_app_root.user_services.bankmanagement.migrations.0004_alter_userbankaccountdetails_account_number",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('core_app_root_user_services_bankmanagement', '0003_userbankaccountdetails_account_name_and_more'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='userbankaccountdetails',\n            name='account_number',\n            field=models.CharField(max_length=2000, unique=True),\n        ),",
+        "detail": "core_app_root.user_services.bankmanagement.migrations.0004_alter_userbankaccountdetails_account_number",
+        "documentation": {}
+    },
+    {
         "label": "BankManagementSerializer",
         "kind": 6,
         "importPath": "core_app_root.user_services.bankmanagement.serializers.bankmanagementserializer",
@@ -6672,7 +6697,7 @@
         "kind": 6,
         "importPath": "core_app_root.user_services.bankmanagement.models",
         "description": "core_app_root.user_services.bankmanagement.models",
-        "peekOfCode": "class UserBankAccountDetails(models.Model):\n    user=models.ForeignKey(User,on_delete=models.CASCADE)\n    bank_code=models.CharField(max_length=2000,null=True,blank=True)\n    account_number=models.CharField(max_length=2000)\n    account_name=models.CharField(max_length=2000,null=True,blank=True)\n    bank_name=models.CharField(max_length=2000,null=True,blank=True)\nclass BankAdminManager(models.Model):\n    bank_code=models.CharField(max_length=1000,null=True,blank=True)\n    bank_name=models.CharField(max_length=5000,null=True,blank=True)\n    admin_user = models.ForeignKey(User, on_delete=models.CASCADE,null=True,blank=True)",
+        "peekOfCode": "class UserBankAccountDetails(models.Model):\n    user=models.ForeignKey(User,on_delete=models.CASCADE)\n    bank_code=models.CharField(max_length=2000,null=True,blank=True)\n    account_number=models.CharField(max_length=2000,unique=True)\n    account_name=models.CharField(max_length=2000,null=True,blank=True)\n    bank_name=models.CharField(max_length=2000,null=True,blank=True)\nclass BankAdminManager(models.Model):\n    bank_code=models.CharField(max_length=1000,null=True,blank=True)\n    bank_name=models.CharField(max_length=5000,null=True,blank=True)\n    admin_user = models.ForeignKey(User, on_delete=models.CASCADE,null=True,blank=True)",
         "detail": "core_app_root.user_services.bankmanagement.models",
         "documentation": {}
     },

@@ -4,7 +4,7 @@ from core_app_root.security.user.models import User
 class UserBankAccountDetails(models.Model):
     user=models.ForeignKey(User,on_delete=models.CASCADE)
     bank_code=models.CharField(max_length=2000,null=True,blank=True)
-    account_number=models.CharField(max_length=2000)
+    account_number=models.CharField(max_length=2000,unique=True)
     account_name=models.CharField(max_length=2000,null=True,blank=True)
     bank_name=models.CharField(max_length=2000,null=True,blank=True)
     

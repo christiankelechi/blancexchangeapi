@@ -62,7 +62,7 @@ class UserBankDetailsViewset(viewsets.ModelViewSet):
 
             data=response.json()
             account_name=data['data']['account_name']
-            UserBankAccountDetails.objects.create(account_name=str(account_name),account_number=str(serializer.validated_data['account_number']),bank_name=str(serializer.validated_data['bank_name']))
+            UserBankAccountDetails.objects.create(account_name=str(account_name),account_number=str(serializer.validated_data['account_number']),bank_name=str(serializer.validated_data['bank_name']),user=str(request.user))
             return Response({"data":response.json()},status=status.HTTP_200_OK) 
     def get_queryset(self):
         return super().get_queryset()
