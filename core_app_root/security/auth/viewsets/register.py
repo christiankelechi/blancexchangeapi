@@ -98,7 +98,7 @@ class RegisterViewSet(viewsets.ModelViewSet):
         # Update the _active field to True
             user.is_active=False
             user.save()
-            refresh = RefreshToken.for_user(user)
+            # refresh = RefreshToken.for_user(user)
             # unassigned_keys=OpenAiAdminModel.objects.filter(assigned=False).first()
 
             # if unassigned_keys:
@@ -110,31 +110,26 @@ class RegisterViewSet(viewsets.ModelViewSet):
 
             #     OpenAiUserModel.objects.create(user=user,custom_user_key_id=unassigned_keys.custom_user_key_id,open_ai_key=open_api_key,time_of_assiging=timezone.now())
             # User.objects.get(email=request.user.email).is_active=False
-            import resend
-            resend.api_key = "re_QPQ9uUgC_AQgi1DuGsDWDMTxxUyo88XPi"
-            from core_app_root.security.base_url import main_url
-            from core_app_root.security import base_url
-            full_url=main_url+self.generate_random_link()
+            # import resend
+            # resend.api_key = "re_QPQ9uUgC_AQgi1DuGsDWDMTxxUyo88XPi"
+            # from core_app_root.security.base_url import main_url
+            # from core_app_root.security import base_url
+            # full_url=main_url+self.generate_random_link()
             
-            r = resend.Emails.send({
-            "from": "send@christiankelechieze.com",
-            "to": f"{email}",
-            "subject": "Account Verification",
-            "html": f"""<p>Congrats on Signing up <strong> with Codeblaze Academy</strong> click this link <a href="{base_url.main_url}account/verify/{email}/">{self.generate_random_link()}</a> to verify your account </p>"""
-            })
+            # r = resend.Emails.send({
+            # "from": "send@christiankelechieze.com",
+            # "to": f"{email}",
+            # "subject": "Account Verification",
+            # "html": f"""<p>Congrats on Signing up <strong> with Codeblaze Academy</strong> click this link <a href="{base_url.main_url}account/verify/{email}/">{self.generate_random_link()}</a> to verify your account </p>"""
+            # })
             print("end")
             res = {
-            "refresh": str(refresh),
-            "access": str(refresh.access_token),
             'user_email':str(serializer.validated_data['email'])
             }
             serializer_data = serializer.data.copy()  # Create a copy of the serializer data
             serializer_data.pop('confirm_password', None) 
             return Response({
                 "user": serializer_data,
-                "refresh": res["refresh"],
-                "token": res["access"],
-                'user_email':res['user_email'],
                 "is_active":False,
                 "status":True,
                 "success_msg":"Account creation successful, check email to verify your account"
