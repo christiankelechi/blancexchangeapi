@@ -24,8 +24,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-cikg1lw$219%t5l=6lz*dj#bi$@3456iz2h6p%oj7p$ngq$&uh'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-# DEBUG = False
+# DEBUG = True
+DEBUG = False
 
 
 ALLOWED_HOSTS = ['192.168.186.107','*']
@@ -56,7 +56,8 @@ INSTALLED_APPS = [
     'core_app_root.security.auth',
     'core_app_root.user_services',
     'core_app_root.user_services.bankmanagement',
-    'core_app_root.user_services.wallet_app'
+    'core_app_root.user_services.wallet_app',
+    'whitenoise.runserver_nostatic'
 ]
 
 MIDDLEWARE = [
@@ -103,6 +104,16 @@ DATABASES = {
     }
 }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'blancexchangedb',
+#         'USER': 'blancexchangedbuser',
+#         'PASSWORD': 'Blancexchange$',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -140,6 +151,11 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT=os.path.join(BASE_DIR,'static')
+
+# DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+import os
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 # STATICFILES_DIRS=[os.path.join(BASE_DIR,'static')]
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
