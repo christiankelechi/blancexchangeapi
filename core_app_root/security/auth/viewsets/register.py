@@ -32,6 +32,8 @@ from django.utils import timezone
 from drf_yasg.utils import swagger_auto_schema
 # from core.wallet.models import UsdModel
 from core_app_root.security.auth.serializer.verify_serializer import VerifySerializer
+from core_app_root.security.auth.viewsets.email_settings_variables import sender_email,sender_password
+from core_app_root.security.auth.models import CodeGenerator
 @swagger_auto_schema(
     request_body=RegisterSerializer,
     responses={200: RegisterSerializer}
@@ -96,8 +98,8 @@ class RegisterViewSet(viewsets.ModelViewSet):
             user = get_object_or_404(User, email=email)
         
         # Update the _active field to True
-            user.is_active=False
-            user.save()
+            # user.is_active=False
+            # user.save()
             # refresh = RefreshToken.for_user(user)
             # unassigned_keys=OpenAiAdminModel.objects.filter(assigned=False).first()
 
@@ -122,36 +124,79 @@ class RegisterViewSet(viewsets.ModelViewSet):
             # "subject": "Account Verification",
             # "html": f"""<p>Congrats on Signing up <strong> with Codeblaze Academy</strong> click this link <a href="{base_url.main_url}account/verify/{email}/">{self.generate_random_link()}</a> to verify your account </p>"""
             # })
+            user.is_active=False
+            user.save()
+            import random; 
+            activation_code=random.randint(1000, 9999)
+            import smtplib
+            from email.mime.multipart import MIMEMultipart
+            from email.mime.text import MIMEText
+
+            # Define the email details
+            sender_email = sender_email
+            sender_password = sender_password
+            receiver_email = str(email)
+            subject = "Account Activation Code"
+            body = f"Enter the four digit code sent to you here in your Blanc Exchange application to continue with account registration completion   {activation_code} , you can copy and paste the activation code"
+            
+            CodeGenerator.objects.create(user=request.user,code_authentication=str(activation_code))
+            # Create the email message
+            msg = MIMEMultipart()
+            msg['From'] = sender_email
+            msg['To'] = receiver_email
+            msg['Subject'] = subject
+            msg.attach(MIMEText(body, 'plain'))
+
+            # Set up the SMTP server
+            server = smtplib.SMTP('mail.privateemail.com', 587)
+            server.starttls()
+            server.login(sender_email, sender_password)
+
+            # Send the email
+            server.sendmail(sender_email, receiver_email, msg.as_string())
+
+            # Close the SMTP connection
+            server.quit()
+
+            # print("Email sent successfully!")
             print("end")
             res = {
             'user_email':str(serializer.validated_data['email'])
             }
             serializer_data = serializer.data.copy()  # Create a copy of the serializer data
             serializer_data.pop('confirm_password', None) 
+            
             return Response({
                 "user": serializer_data,
-                "is_active":False,
+                "is_active":false,
                 "status":True,
-                "success_msg":"Account creation successful, check email to verify your account"
+                "success_msg":"Account creation successful, check email to get your authentication code"
             }, status=status.HTTP_201_CREATED)   
             
-                
+            
     # return Response({'error': 'No unassigned keys available.'}, status=status.HTTP_404_NOT_FOUND)
     # else:
     #     return Response({"error":"User with this Api have an existing api key"},status=status.HTTP_403_FORBIDDEN)
 class ActivateAccountView(viewsets.ModelViewSet):
     serializer_class = VerifySerializer
-    permission_classes=[AllowAny]
+    # permission_classes=[AllowAny]
     queryset=User.objects.all()
     http_method_names=['get']
-    @action(detail=False, url_path='verify/(?P<email>[^/]+)')
-    def verify_account(self, request, email=None):
+    # @action(detail=False, url_path='verify/(?P<email>[^/]+)')
+    def create(self):
+        serializer=self.serializer_class(data=request.data)
+        user = get_object_or_404(CodeGenerator, user=request.user)
+        activation_code=user.code_authentication
+        
+        if serializer.is_valid():
+            code_authentication=serializer.validated_data['code_authentication']
+            
+            if str(code_authentication)==str(activation_code):
         # Your logic to activate the account using the email parameter
-        user = get_object_or_404(User, email=email)
+                user = get_object_or_404(User, email=request.user__email)
+                # Update the _active field to True
+                user.is_active=True
+                
+                user.save()
+                return Response({"status":True,"message":f"Actiont verified successfully for user with email {request.user__email}"})
         
-        # Update the _active field to True
-        user.is_active=True
-        
-        user.save()
-        return HttpResponseRedirect('https://codeblazeacademy-app.vercel.app/signin')
-    

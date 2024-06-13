@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 # configuration settings
 import os
 from pathlib import Path
+from decouple import config, Csv # type: ignore
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -57,7 +58,12 @@ INSTALLED_APPS = [
     'core_app_root.user_services',
     'core_app_root.user_services.bankmanagement',
     'core_app_root.user_services.wallet_app',
-    'whitenoise.runserver_nostatic'
+    'whitenoise.runserver_nostatic',
+
+    # new
+    'bitgo',
+    'dashboard',
+    'management',
 ]
 
 MIDDLEWARE = [
@@ -152,6 +158,9 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT=os.path.join(BASE_DIR,'static')
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 # DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 import os
@@ -163,6 +172,7 @@ import os
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
     'rest_framework.permissions.IsAuthenticated',
+    # 'rest_framework.permissions.AllowAny',
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
     'rest_framework_simplejwt.authentication.JWTAuthentication',
@@ -208,3 +218,11 @@ SITE_ID = 1
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# bitgo settings
+BITGO_ACCESS_TOKEN = config('BITGO_ACCESS_TOKEN')
+BITGO_PRODUCTION_URL = "https://www.bitgo.com/api/v2"
+BITGO_TEST_URL = "https://test.bitgo.com/api/v2"
+ALLOWED_BLOCKCHAINS = config('ALLOWED_BLOCKCHAINS',  default=['trx','bep',], cast=Csv())
+ENTERPRISE_ID = '663b3119e13a623a0ca95e689d91d4cb'

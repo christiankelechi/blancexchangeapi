@@ -1,0 +1,146 @@
+{
+    "wallets": [
+        {
+            "id": "6664971ece8d97a8157f3a050272a1af",
+            "users": [
+                {
+                    "user": "663b3117e13a623a0ca95e3289f7cc30",
+                    "permissions": [
+                        "admin",
+                        "spend",
+                        "view"
+                    ]
+                }
+            ],
+            "coin": "trx",
+            "label": "Express Generated trx Wallet",
+            "m": 2,
+            "n": 3,
+            "keys": [
+                "6664971d234c1d8a9e44f1ed1756b990",
+                "6664971d9f507050a337c63026c0d2da",
+                "6664971e7ac8092df72e02053c981964"
+            ],
+            "keySignatures": {
+                "backupPub": "73e846b51dc55a200125ad45ab7ad4742b4331ec243264ab0af34cee08f1723067b3ab5321e7d40a74ac810944c6b898bc4914f8e334d9dff8b72ec1452da0751b",
+                "bitgoPub": "a9f1b7539d61d7ce948b8145dbebafdda635099e0126622dddf23c79d4b6b23717382268647d94e655078497f5d31c4575c2546d93c34ae328bbcea30fe3bf591b"
+            },
+            "enterprise": "663b3119e13a623a0ca95e689d91d4cb",
+            "organization": "663b3119e13a623a0ca95ec12a375674",
+            "bitgoOrg": "BitGo Inc",
+            "tags": [
+                "6664971ece8d97a8157f3a050272a1af",
+                "663b3119e13a623a0ca95e689d91d4cb"
+            ],
+            "disableTransactionNotifications": false,
+            "freeze": {},
+            "deleted": false,
+            "approvalsRequired": 1,
+            "isCold": false,
+            "coinSpecific": {
+                "rootAddress": "THfcxt5GK36XdJbVdxgrsDe9QQ9khZoT4F",
+                "rootPub": "xpub661MyMwAqRbcFfDYNTywVGQW2LaFtJSvuGb5z7KUFnsPvDMAybBZCbbrQjGVSwFtTasWNRUWYDEFHrSkAVZiqGyvSs2fCd6uS1TYBGhQi2s",
+                "pendingChainInitialization": false,
+                "creationFailure": [],
+                "minimumFunding": 100000000
+            },
+            "admin": {},
+            "clientFlags": [],
+            "walletFlags": [],
+            "allowBackupKeySigning": false,
+            "startDate": "2024-06-08T17:38:38.000Z",
+            "type": "hot",
+            "buildDefaults": {},
+            "customChangeKeySignatures": {},
+            "hasLargeNumberOfAddresses": false,
+            "multisigType": "onchain",
+            "config": {},
+            "receiveAddress": {
+                "id": "6664971fce8d97a8157f3a11847c59e4",
+                "address": "THfcxt5GK36XdJbVdxgrsDe9QQ9khZoT4F",
+                "chain": 0,
+                "index": 0,
+                "coin": "trx",
+                "wallet": "6664971ece8d97a8157f3a050272a1af",
+                "needsConsolidation": true,
+                "coinSpecific": {
+                    "rootPub": "xpub661MyMwAqRbcFfDYNTywVGQW2LaFtJSvuGb5z7KUFnsPvDMAybBZCbbrQjGVSwFtTasWNRUWYDEFHrSkAVZiqGyvSs2fCd6uS1TYBGhQi2s"
+                }
+            }
+        },
+        {
+            "id": "6664856273d52dc3802e3819058026b4",
+            "users": [
+                {
+                    "user": "663b3117e13a623a0ca95e3289f7cc30",
+                    "permissions": [
+                        "admin",
+                        "spend",
+                        "view"
+                    ]
+                }
+            ],
+            "coin": "sol",
+            "label": "Express Generated sol Wallet",
+            "m": 2,
+            "n": 3,
+            "keys": [
+                "66648562561d33b8dd2c66ce651aca11",
+                "66648561430db7e67364da187efde499",
+                "666485612f9f7fcb5c2b8c34253bfcac"
+            ],
+            "keySignatures": {},
+            "enterprise": "663b3119e13a623a0ca95e689d91d4cb",
+            "organization": "663b3119e13a623a0ca95ec12a375674",
+            "bitgoOrg": "BitGo Inc",
+            "tags": [
+                "6664856273d52dc3802e3819058026b4",
+                "663b3119e13a623a0ca95e689d91d4cb"
+            ],
+            "disableTransactionNotifications": false,
+            "freeze": {},
+            "deleted": false,
+            "approvalsRequired": 1,
+            "isCold": false,
+            "coinSpecific": {
+                "rootAddress": "Ha3nymn6RDt8qwHGskYh3ZTCgW6J5SmUdNpirYQ9vb97",
+                "pendingChainInitialization": false,
+                "minimumFunding": 2447136,
+                "lastChainIndex": {
+                    "0": 3,
+                    "1": -1
+                },
+                "nonceExpiresAt": "2024-06-07T18:07:15.782Z",
+                "trustedTokens": []
+            },
+            "admin": {},
+            "clientFlags": [],
+            "walletFlags": [],
+            "allowBackupKeySigning": false,
+            "startDate": "2024-06-08T16:22:58.000Z",
+            "type": "hot",
+            "buildDefaults": {},
+            "customChangeKeySignatures": {},
+            "hasLargeNumberOfAddresses": false,
+            "multisigType": "tss",
+            "config": {},
+            "receiveAddress": {
+                "id": "6666331eeae6c7d77e6f2bf18be474c1",
+                "address": "EaKiAZ7WrfsJEJ5CGjK1MjoxXpjudaVSQiQ8msdMNrFL",
+                "chain": 0,
+                "index": 3,
+                "coin": "sol",
+                "wallet": "6664856273d52dc3802e3819058026b4",
+                "label": "address 2024-06-09 22:56:29.485671",
+                "needsConsolidation": false,
+                "coinSpecific": {
+                    "rootAddress": "Ha3nymn6RDt8qwHGskYh3ZTCgW6J5SmUdNpirYQ9vb97",
+                    "minimumFunding": 2447136,
+                    "type": "native",
+                    "pendingChainInitialization": false,
+                    "trustedTokens": []
+                }
+            }
+        }
+    ]
+}

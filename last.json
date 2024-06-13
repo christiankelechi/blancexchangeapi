@@ -1,0 +1,13 @@
+{
+    "id": "6666bcbd1d187535da3bd56a8ad7ac79",
+    "address": "TQkcPwBdojASovvwjY6uy4SVF7B1YReSHU",
+    "chain": 0,
+    "index": 1,
+    "coin": "trx",
+    "wallet": "6664971ece8d97a8157f3a050272a1af",
+    "label": "my address ttrx:usdt 1",
+    "needsConsolidation": false,
+    "coinSpecific": {
+        "rootPub": "xpub661MyMwAqRbcFfDYNTywVGQW2LaFtJSvuGb5z7KUFnsPvDMAybBZCbbrQjGVSwFtTasWNRUWYDEFHrSkAVZiqGyvSs2fCd6uS1TYBGhQi2s"
+    }
+}

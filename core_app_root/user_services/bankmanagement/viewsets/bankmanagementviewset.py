@@ -20,7 +20,8 @@ class BankManagementViewset(viewsets.ModelViewSet):
 
 # Extract bank names from the queryset
         bank_names = [bank.bank_name for bank in all_banks]
-        return Response({"data":bank_names},status=status.HTTP_200_OK) 
+        bank_codes=[bank.bank_code for bank in all_banks]
+        return Response({"bank_names":bank_names,"bank_codes":bank_codes},status=status.HTTP_200_OK) 
     
     
 

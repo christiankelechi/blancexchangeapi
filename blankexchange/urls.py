@@ -24,7 +24,7 @@ from rest_framework import permissions
 from django.urls import path,re_path,include
 schema_view = get_schema_view(
    openapi.Info(
-      title="Blanc exchange Api",
+      title="Blanc exchange Api Production mode",
       default_version='v1',
       description="Blanc exchange App Documentation",
       terms_of_service="https://www.google.com/policies/terms/",
@@ -44,6 +44,16 @@ urlpatterns = [
     path('',include(('core_app_root.security.auth.routers','core_app_root.security.auth'))),
     path('bank/',include(('core_app_root.user_services.bankmanagement.routers','core_app_root.user_services.bankmanagement'))),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+    
+
+    # path('bitgo/',include('bitgo.urls')),
+    # path('cryto/',include('dashboard.routers_2', 'dashboard')),
+    path('',include('dashboard.routers', 'dashboard')),
+    # path('',include('dashboard.routers_1', 'dashboard')),
+    path('action/',include('dashboard.urls')),
+    path('management/',include('management.routers')),
+    path('info/',include('management.urls')),
+    
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

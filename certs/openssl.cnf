@@ -1,0 +1,21 @@
+[req]
+default_bits       = 2048
+distinguished_name = req_distinguished_name
+req_extensions     = req_ext
+x509_extensions    = v3_ca
+prompt             = no
+
+[req_distinguished_name]
+C  = AU
+ST = Some-State
+O  = Blanc Exchange
+emailAddress = daniel.eze.1960@gmail.com
+
+[req_ext]
+subjectAltName = @alt_names
+
+[v3_ca]
+subjectAltName = @alt_names
+
+[alt_names]
+IP.1 = 192.81.210.127
