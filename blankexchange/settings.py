@@ -226,3 +226,16 @@ BITGO_PRODUCTION_URL = "https://www.bitgo.com/api/v2"
 BITGO_TEST_URL = "https://test.bitgo.com/api/v2"
 ALLOWED_BLOCKCHAINS = config('ALLOWED_BLOCKCHAINS',  default=['trx','bep',], cast=Csv())
 ENTERPRISE_ID = '663b3119e13a623a0ca95e689d91d4cb'
+
+AUTHENTICATION_BACKENDS = [
+ 'django.contrib.auth.backends.ModelBackend',
+ 'account.authentication.EmailAuthBackend',
+ ]
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'mail.privateemail.com'
+EMAIL_HOST_USER = 'no-reply@blancexchange.net'
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+EMAIL_HOST_PASSWORD = 'Blancexchange406$'
+EMAIL_PORT = 587
+EMAIL_USE_SSL = False
+EMAIL_USE_TLS = True

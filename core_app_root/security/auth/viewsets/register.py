@@ -1,4 +1,6 @@
 import django.contrib
+import random; 
+
 from core_app_root.security import base_url
 from django.shortcuts import redirect
 from rest_framework import viewsets
@@ -6,6 +8,8 @@ from rest_framework.decorators import action
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponseRedirect
 import random
+from django.conf import settings
+from django.template.loader import render_to_string
 import string
 from django.views import View
 from rest_framework.response import Response
@@ -32,8 +36,9 @@ from django.utils import timezone
 from drf_yasg.utils import swagger_auto_schema
 # from core.wallet.models import UsdModel
 from core_app_root.security.auth.serializer.verify_serializer import VerifySerializer
-from core_app_root.security.auth.viewsets.email_settings_variables import sender_email,sender_password
+
 from core_app_root.security.auth.models import CodeGenerator
+from django.core.mail import EmailMessage
 @swagger_auto_schema(
     request_body=RegisterSerializer,
     responses={200: RegisterSerializer}
@@ -89,17 +94,9 @@ class RegisterViewSet(viewsets.ModelViewSet):
             
 
             print("validated good")
-            email=serializer.validated_data['email']
+            
 
-            user=serializer.save()
-
-            # fullname=str(serializer.validated_data['first_name'])+", "+str(serializer.validated_data['last_name'])
-            # return render(request,'account/register_done.html',{'fullname':fullname})
-            user = get_object_or_404(User, email=email)
-        
-        # Update the _active field to True
-            # user.is_active=False
-            # user.save()
+            
             # refresh = RefreshToken.for_user(user)
             # unassigned_keys=OpenAiAdminModel.objects.filter(assigned=False).first()
 
@@ -124,40 +121,58 @@ class RegisterViewSet(viewsets.ModelViewSet):
             # "subject": "Account Verification",
             # "html": f"""<p>Congrats on Signing up <strong> with Codeblaze Academy</strong> click this link <a href="{base_url.main_url}account/verify/{email}/">{self.generate_random_link()}</a> to verify your account </p>"""
             # })
+            import random
+            activation_code=random.randint(1000, 9999)
+            # import smtplib
+            # from email.mime.multipart import MIMEMultipart
+            # from email.mime.text import MIMEText
+         
+            # # Define the email details
+            message = f"""
+        Enter the four digit code sent to you here in your Blanc Exchange application to continue with account registration completion   {activation_code} , you can copy and paste the activation code
+            
+            """
+                                   
+            receiver_email = email
+            subject = "Account Activation Code"
+            # body = f"Enter the four digit code sent to you here in your Blanc Exchange application to continue with account registration completion   {activation_code} , you can copy and paste the activation code"
+            user=serializer.save()
             user.is_active=False
             user.save()
-            import random; 
-            activation_code=random.randint(1000, 9999)
-            import smtplib
-            from email.mime.multipart import MIMEMultipart
-            from email.mime.text import MIMEText
-
-            # Define the email details
-            sender_email = sender_email
-            sender_password = sender_password
-            receiver_email = str(email)
-            subject = "Account Activation Code"
-            body = f"Enter the four digit code sent to you here in your Blanc Exchange application to continue with account registration completion   {activation_code} , you can copy and paste the activation code"
-            
-            CodeGenerator.objects.create(user=request.user,code_authentication=str(activation_code))
+            # CodeGenerator.objects.create(user=user,code_authentication=str(activation_code))
             # Create the email message
-            msg = MIMEMultipart()
-            msg['From'] = sender_email
-            msg['To'] = receiver_email
-            msg['Subject'] = subject
-            msg.attach(MIMEText(body, 'plain'))
+            # msg = MIMEMultipart()
+            # msg['From'] = sender_email
+            # msg['To'] = receiver_email
+            # msg['Subject'] = subject
+            # msg.attach(MIMEText(body, 'plain'))
 
-            # Set up the SMTP server
-            server = smtplib.SMTP('mail.privateemail.com', 587)
-            server.starttls()
-            server.login(sender_email, sender_password)
+            # # Set up the SMTP server
+            # server = smtplib.SMTP('mail.privateemail.com', 587)
+            # server.starttls()
+            # server.login(sender_email, sender_password)
 
-            # Send the email
-            server.sendmail(sender_email, receiver_email, msg.as_string())
+            # # Send the email
+            # server.sendmail(sender_email, receiver_email, msg.as_string())
 
+            email_message = EmailMessage(
+                subject,
+                message,
+                settings.EMAIL_HOST_USER,
+                [str(receiver_email)]
+                  )
+
+            email_message.send()
             # Close the SMTP connection
-            server.quit()
-
+            # server.quit()
+            
+            
+            # fullname=str(serializer.validated_data['first_name'])+", "+str(serializer.validated_data['last_name'])
+            # return render(request,'account/register_done.html',{'fullname':fullname})
+            # user = get_object_or_404(User, email=email)
+        
+        # Update the _active field to True
+            
             # print("Email sent successfully!")
             print("end")
             res = {
@@ -168,7 +183,7 @@ class RegisterViewSet(viewsets.ModelViewSet):
             
             return Response({
                 "user": serializer_data,
-                "is_active":false,
+                "is_active":False,
                 "status":True,
                 "success_msg":"Account creation successful, check email to get your authentication code"
             }, status=status.HTTP_201_CREATED)   
