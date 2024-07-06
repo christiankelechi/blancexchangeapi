@@ -12,4 +12,4 @@ class RegisterSerializer(UserSerializer):
         fields = ['id','email', 'username','password','confirm_password']
 
     def create(self, validated_data):
-        return User.objects.create_user(**validated_data)
+        return User.objects.create_user(**validated_data,is_confirmed=False)

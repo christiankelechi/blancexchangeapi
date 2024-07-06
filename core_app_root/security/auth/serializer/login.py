@@ -18,7 +18,7 @@ from datetime import timedelta
 #         fields=['current_token']
 
 class LoginSerializerClass(TokenObtainPairSerializer):
-    # ...
+    
 
     def validate(self, attrs):
         data = super().validate(attrs)

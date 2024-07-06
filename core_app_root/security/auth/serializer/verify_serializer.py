@@ -1,4 +1,7 @@
 from rest_framework import serializers
-class VerifySerializer(serializers.Serializer):
-    code_authentication=serializers.CharField(max_length=1000)
+from core_app_root.security.auth.models import CodeGenerator
+class VerifySerializer(serializers.ModelSerializer):
+    class Meta:
+        model=CodeGenerator
+        fields=['code_authentication']
     

@@ -41,6 +41,7 @@ urlpatterns = [
     path('swagger<format>/', schema_view.without_ui(cache_timeout=0), name='schema-json'),
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('',include(('core_app_root.security.user.routers','core_app_root.security.user'))),
+    path('customtemplates/',include('core_app_root.urls')),
     path('',include(('core_app_root.security.auth.routers','core_app_root.security.auth'))),
     path('bank/',include(('core_app_root.user_services.bankmanagement.routers','core_app_root.user_services.bankmanagement'))),
     

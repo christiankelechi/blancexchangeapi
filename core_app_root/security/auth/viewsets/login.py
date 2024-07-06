@@ -24,7 +24,11 @@ class LoginViewSet(viewsets.ModelViewSet):
             if valid_user.is_active==False:
                 return Response({"error_message":"You have to activate your account first","status":False}, status=status.HTTP_400_BAD_REQUEST)
             else:
-                return Response(serializer.validated_data, status=status.HTTP_200_OK)
+                if valid_user.is_confirmed==False:
+                    return Response({"status":False,"detail":"You need to activate your email to make use of the account","response_data":serializer.validated_data}, status=status.HTTP_400_BAD_REQUEST)
+                else:
+                    return Response({"response_data":serializer.validated_data}, status=status.HTTP_200_OK)
+                    
         else:
             return Response({'error_msg':'User  with that email or password does not exist','status':False},status=status.HTTP_401_UNAUTHORIZED)
 

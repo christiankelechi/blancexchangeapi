@@ -20,7 +20,7 @@ class UserManager(BaseUserManager):
         except (ObjectDoesNotExist, ValueError, TypeError):
             return Http404
 
-    def create_user(self, username, email, password=None, **kwargs):
+    def create_user(self, username, email,is_confirmed,password=None, **kwargs):
         """Create and return a `User` with an email, phone number, username and password."""
         # if username is None:
         #     raise TypeError('Users must have a username.')
@@ -30,7 +30,7 @@ class UserManager(BaseUserManager):
         if password is None:
             raise TypeError('User must have an email.')
 
-        user = self.model(username=username, email=self.normalize_email(email), **kwargs)
+        user = self.model(username=username,is_confirmed=False,email=self.normalize_email(email), **kwargs)
         user.set_password(password)
         user.save(using=self._db)
 
@@ -50,6 +50,7 @@ class UserManager(BaseUserManager):
         user = self.create_user(username, email, password, **kwargs)
         user.is_superuser = True
         user.is_staff = True
+        
         user.save(using=self._db)
 
         return user
@@ -64,6 +65,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     # phone_number=models.CharField(max_length=300,blank=True,null=True)
     email = models.EmailField(db_index=True, unique=True)
     is_active = models.BooleanField(default=True)
+    is_confirmed=models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)  # Add this line
     created = models.DateTimeField(auto_now=True)

@@ -25,8 +25,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-cikg1lw$219%t5l=6lz*dj#bi$@3456iz2h6p%oj7p$ngq$&uh'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-DEBUG = False
+DEBUG = True
+# DEBUG = False
 
 
 ALLOWED_HOSTS = ['192.168.186.107','*']
@@ -84,7 +84,7 @@ ROOT_URLCONF = 'blankexchange.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -156,7 +156,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT=os.path.join(BASE_DIR,'static')
+# STATIC_ROOT=os.path.join(BASE_DIR,'static')
+STATICFILES_DIRS=[os.path.join(BASE_DIR,'static')]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -229,7 +230,6 @@ ENTERPRISE_ID = '663b3119e13a623a0ca95e689d91d4cb'
 
 AUTHENTICATION_BACKENDS = [
  'django.contrib.auth.backends.ModelBackend',
- 'account.authentication.EmailAuthBackend',
  ]
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'mail.privateemail.com'

@@ -1,6 +1,6 @@
 import django.contrib
 import random; 
-
+from datetime import timedelta
 from core_app_root.security import base_url
 from django.shortcuts import redirect
 from rest_framework import viewsets
@@ -18,7 +18,7 @@ from core_app_root.security.auth.utils import generate_token
 from django.utils.encoding import force_bytes,DjangoUnicodeDecodeError,force_str
 from rest_framework.viewsets import ViewSet
 from rest_framework import viewsets
-from rest_framework.permissions import AllowAny
+from rest_framework.permissions import AllowAny,IsAuthenticated
 from rest_framework import status
 from django.contrib import messages
 from rest_framework_simplejwt.tokens import RefreshToken
@@ -36,13 +36,16 @@ from django.utils import timezone
 from drf_yasg.utils import swagger_auto_schema
 # from core.wallet.models import UsdModel
 from core_app_root.security.auth.serializer.verify_serializer import VerifySerializer
-
+from rest_framework import status
 from core_app_root.security.auth.models import CodeGenerator
 from django.core.mail import EmailMessage
+from rest_framework_simplejwt.tokens import RefreshToken
+
 @swagger_auto_schema(
     request_body=RegisterSerializer,
     responses={200: RegisterSerializer}
 )
+
 
 class RegisterViewSet(viewsets.ModelViewSet):
     serializer_class = RegisterSerializer
@@ -63,6 +66,7 @@ class RegisterViewSet(viewsets.ModelViewSet):
         print(request.data)
         serializer = self.serializer_class(data=request.data)
         email=str(serializer.initial_data['email'])
+        email_user=email
         username=str(serializer.initial_data['username'])
         # print(serializer.initial_data['password'])
         password_length=int(len(serializer.initial_data['password']))
@@ -97,7 +101,6 @@ class RegisterViewSet(viewsets.ModelViewSet):
             
 
             
-            # refresh = RefreshToken.for_user(user)
             # unassigned_keys=OpenAiAdminModel.objects.filter(assigned=False).first()
 
             # if unassigned_keys:
@@ -137,9 +140,11 @@ class RegisterViewSet(viewsets.ModelViewSet):
             subject = "Account Activation Code"
             # body = f"Enter the four digit code sent to you here in your Blanc Exchange application to continue with account registration completion   {activation_code} , you can copy and paste the activation code"
             user=serializer.save()
-            user.is_active=False
+            # user.is_active=False
+            # user.is_confirmed=False
             user.save()
-            # CodeGenerator.objects.create(user=user,code_authentication=str(activation_code))
+        
+            CodeGenerator.objects.create(user=user,code_authentication=str(activation_code))
             # Create the email message
             # msg = MIMEMultipart()
             # msg['From'] = sender_email
@@ -163,6 +168,7 @@ class RegisterViewSet(viewsets.ModelViewSet):
                   )
 
             email_message.send()
+            
             # Close the SMTP connection
             # server.quit()
             
@@ -175,43 +181,58 @@ class RegisterViewSet(viewsets.ModelViewSet):
             
             # print("Email sent successfully!")
             print("end")
-            res = {
-            'user_email':str(serializer.validated_data['email'])
-            }
+            
+            
             serializer_data = serializer.data.copy()  # Create a copy of the serializer data
             serializer_data.pop('confirm_password', None) 
             
             return Response({
                 "user": serializer_data,
-                "is_active":False,
+                "is_confirmed":False,
                 "status":True,
-                "success_msg":"Account creation successful, check email to get your authentication code"
+                "detail":"Account creation successful, check email to get your authentication code"
             }, status=status.HTTP_201_CREATED)   
             
             
     # return Response({'error': 'No unassigned keys available.'}, status=status.HTTP_404_NOT_FOUND)
     # else:
     #     return Response({"error":"User with this Api have an existing api key"},status=status.HTTP_403_FORBIDDEN)
+
 class ActivateAccountView(viewsets.ModelViewSet):
     serializer_class = VerifySerializer
-    # permission_classes=[AllowAny]
+    permission_classes=[IsAuthenticated,]
     queryset=User.objects.all()
-    http_method_names=['get']
+    http_method_names=['post']
     # @action(detail=False, url_path='verify/(?P<email>[^/]+)')
-    def create(self):
+    def create(self,request):
         serializer=self.serializer_class(data=request.data)
-        user = get_object_or_404(CodeGenerator, user=request.user)
-        activation_code=user.code_authentication
+        
         
         if serializer.is_valid():
-            code_authentication=serializer.validated_data['code_authentication']
-            
-            if str(code_authentication)==str(activation_code):
-        # Your logic to activate the account using the email parameter
-                user = get_object_or_404(User, email=request.user__email)
-                # Update the _active field to True
-                user.is_active=True
+            try:
+                code_authentication=serializer.validated_data['code_authentication']
+                user = User.objects.get(email=request.user.email)
+
+                current_user=CodeGenerator.objects.get(user__email=request.user.email)
+                activation_code=current_user.code_authentication
                 
-                user.save()
-                return Response({"status":True,"message":f"Actiont verified successfully for user with email {request.user__email}"})
-        
+                if user.is_confirmed==True:
+                    return Response({"status":False,"detail":"You have already verified your account"},status=status.HTTP_400_BAD_REQUEST)
+                else:
+                    
+                    if str(code_authentication)==str(activation_code):
+            
+                        user.is_confirmed=True
+                        user.save()
+                        
+                        
+                        return Response({"status":True,"detail":f"Acount verified successfully for {request.user.email}"},status=status.HTTP_200_OK)
+                    else:
+                        
+                    
+                    
+                        return Response({"status":True,"detail":f"Acount cannot  not be verified due to incorrect code {request.user.email}"},status=status.HTTP_406_NOT_ACCEPTABLE)
+                
+            except:
+                return Response({"detail":"Your request cant be processed now, check your network and try again"})
+            
