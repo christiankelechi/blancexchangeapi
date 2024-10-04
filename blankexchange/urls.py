@@ -55,6 +55,8 @@ urlpatterns = [
     path('action/',include('dashboard.urls')),
     path('management/',include('management.routers')),
     path('info/',include('management.urls')),
+    path('',include('core_app_root.urls')),
+    
     
 ]
 if settings.DEBUG:

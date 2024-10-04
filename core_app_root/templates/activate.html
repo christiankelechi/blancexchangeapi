@@ -1,27 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-    {% load static %}
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>complete your account</title>
-</head>
-<body>
-    <div>
-        <img src="{% static 'images/blancexchangebanner.jpeg' %}" style="width:100vw;height:30vh" alt="">
-
-    </div>
-    <section>
-        <div style="height: 70vh;width:100vw;display:block;margin-left:100px;margin-right:100px">
-<h2>Hi Raphael</h2>
-<p style="font-size: 20px;">Your OTP is: <br><br> 2345 <br><br> Kindly use the Pin above to <br> verify your E-mail. This OTP <br> is only valid for next 20 <br> minutes</p>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+        <section style="display: flex;width:100vw">
+        
+        <div style="height: 70vh;width:50vw;display:block;margin-left:100px;margin-right:100px">
+<h2 style="font-weight: bold;">Hi Raphael,</h2>
+<p>We are happy to have you onboarded to Blanc Exchange. To start exploring this platform you need to verify your email </p>
+<p style="font-size: 20px;">Your OTP is: <br><br> <h2 style="font-weight: bold;">2345</h2>  <br><br> Kindly use the Pin above to <br> verify your E-mail. This OTP <br> is only valid for next 20 <br> minutes</p>
 <p>Please ignore  this email if  you <br> did not request email verification</p>
         </div>
-    </section>
-    <section>
-        <div style="background-color: blue;height:50vh">
 
+        <div style="width:50vw">
+                <img src="{% static './images/myphone.png' %}" style="width:80%;height:90%" alt="">
         </div>
     </section>
-</body>
-</html>
+    {% endblock content %}

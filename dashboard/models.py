@@ -170,22 +170,59 @@ class Deposit( models.Model):
         self.status = Deposit.Status.FAILED
         self.save()
         Notification.from_txn(self)
-
+        
     @classmethod
     def update_deposits(cls, profile):
-        addresses = profile.addresses
-        if addresses < BitgoWallet.objects.count():
+        # Fetch all addresses associated with the profile (make sure to use .all())
+        addresses = profile.addresses.all()  # Get the queryset for addresses, not the RelatedManager
+
+        # Fetch all deposits related to the profile from external source (e.g., Bitgo)
+        deposits_data = fetch_deposits(profile)  # Pass the profile to fetch deposits
+        
+        # Initialize addresses if needed
+        if addresses.count() < BitgoWallet.objects.count():
             Address.initialise_addresses(profile)
             return
         
-        deposits_data = fetch_deposits()
+        for dep in deposits_data:
+            # Check if the deposit is linked to any of the profile's addresses
+            address_match = addresses.filter(wallet_address=dep['wallet_address']).exists()
 
-        for dep in deposits_data: 
-            deposit, created = cls.objects.get_or_create(id=dep['transaction_id'], defaults=dep)
+            if address_match:
+                # Process the deposit if it matches an address
+                deposit, created = cls.objects.get_or_create(
+                    transaction_id=dep['transaction_id'], 
+                    defaults={'amount': dep['amount'], 'profile': profile, 'status': Deposit.Status.PENDING}
+                )
+                
+                if created:
+                    # If the deposit is new, confirm it (update status and credit wallet)
+                    if dep['status'] == 'confirmed':
+                        deposit.confirm_deposit()
+                    elif dep['comment'] == 'withdrawn':
+                        deposit.is_withdrawn = True
+                        deposit.status = Deposit.Status.COMPLETE
+                        deposit.save()
+                else:
+                    # Update the status if needed
+                    if dep['status'] == 'failed':
+                        deposit.decline_deposit()
 
-            if created:
-                if dep['comment'] != 'withdrawn':
-                    deposit.confirm_deposit()
+    # @classmethod
+    # def update_deposits(cls, profile):
+    #     addresses = profile.addresses
+    #     if addresses < BitgoWallet.objects.count():
+    #         Address.initialise_addresses(profile)
+    #         return
+        
+    #     deposits_data = fetch_deposits()
+
+    #     for dep in deposits_data: 
+    #         deposit, created = cls.objects.get_or_create(id=dep['transaction_id'], defaults=dep)
+
+    #         if created:
+    #             if dep['comment'] != 'withdrawn':
+    #                 deposit.confirm_deposit()
                 
 
 

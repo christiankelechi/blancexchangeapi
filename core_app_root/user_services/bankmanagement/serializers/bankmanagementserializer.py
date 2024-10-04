@@ -7,5 +7,5 @@ class BankManagementSerializer(serializers.ModelSerializer):
 
 class UserBankDetailsSerializer(serializers.ModelSerializer):
     class Meta:
-        fields=['bank_code','account_number']
+        fields=['bank_name','account_number']
         model=UserBankAccountDetails

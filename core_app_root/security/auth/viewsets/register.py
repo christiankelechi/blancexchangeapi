@@ -141,7 +141,7 @@ class RegisterViewSet(viewsets.ModelViewSet):
             # body = f"Enter the four digit code sent to you here in your Blanc Exchange application to continue with account registration completion   {activation_code} , you can copy and paste the activation code"
             user=serializer.save()
             # user.is_active=False
-            # user.is_confirmed=False
+            user.is_confirmed=False
             user.save()
         
             CodeGenerator.objects.create(user=user,code_authentication=str(activation_code))
@@ -168,18 +168,6 @@ class RegisterViewSet(viewsets.ModelViewSet):
                   )
 
             email_message.send()
-            
-            # Close the SMTP connection
-            # server.quit()
-            
-            
-            # fullname=str(serializer.validated_data['first_name'])+", "+str(serializer.validated_data['last_name'])
-            # return render(request,'account/register_done.html',{'fullname':fullname})
-            # user = get_object_or_404(User, email=email)
-        
-        # Update the _active field to True
-            
-            # print("Email sent successfully!")
             print("end")
             
             
@@ -215,6 +203,7 @@ class ActivateAccountView(viewsets.ModelViewSet):
 
                 current_user=CodeGenerator.objects.get(user__email=request.user.email)
                 activation_code=current_user.code_authentication
+                current_user.is_active==False
                 
                 if user.is_confirmed==True:
                     return Response({"status":False,"detail":"You have already verified your account"},status=status.HTTP_400_BAD_REQUEST)
@@ -226,11 +215,8 @@ class ActivateAccountView(viewsets.ModelViewSet):
                         user.save()
                         
                         
-                        return Response({"status":True,"detail":f"Acount verified successfully for {request.user.email}"},status=status.HTTP_200_OK)
+                        return Response({"status":True,"detail":f"Account verified successfully for {request.user.email}"},status=status.HTTP_200_OK)
                     else:
-                        
-                    
-                    
                         return Response({"status":True,"detail":f"Acount cannot  not be verified due to incorrect code {request.user.email}"},status=status.HTTP_406_NOT_ACCEPTABLE)
                 
             except:

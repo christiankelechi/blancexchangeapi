@@ -1,5 +1,6 @@
 sudo systemctl restart nginx
-
+Created symlink /etc/systemd/system/sockets_zenia.target.wants/gunicorn_zenia.socket → /etc/systemd/system/gunicorn_zenia.socket.
+Unit /etc/systemd/system/gunicorn_zenia.socket is added as a dependency to a non-existent unit sockets_zenia.target.
 sudo service gunicorn restart
 
 sudo service nginx restart

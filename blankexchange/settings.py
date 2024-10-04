@@ -64,6 +64,9 @@ INSTALLED_APPS = [
     'bitgo',
     'dashboard',
     'management',
+    'core_app_root.wallet_management',
+    'core_app_root.wallet_management.bep_wallet',
+    'core_app_root.wallet_management.trx_wallet'
 ]
 
 MIDDLEWARE = [
@@ -84,7 +87,7 @@ ROOT_URLCONF = 'blankexchange.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'templates')],
+        'DIRS': [os.path.join(BASE_DIR,'core_app_root/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

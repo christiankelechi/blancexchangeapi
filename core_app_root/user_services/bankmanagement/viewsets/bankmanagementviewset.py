@@ -11,40 +11,51 @@ from dotenv import load_dotenv
 import asyncio
 import json
 import aiohttp
+import os
 # Define your secret key and base URL
-
+import json
 import requests
 class BankManagementViewset(viewsets.ModelViewSet):
     http_method_names=['get']
-    permission_classes=[permissions.IsAuthenticated]
+    
+    permission_classes=[permissions.AllowAny]
     serializer_class=BankManagementSerializer
+    bank_list=[]
     def list(self,request):
-        all_banks = BankAdminManager.objects.all()
-
+        with open("bank_codes.json","r") as bank_data_file:
+            banks=json.load(bank_data_file)
+            
 # Extract bank names from the queryset
-        bank_names = [bank.bank_name for bank in all_banks]
-        bank_codes=[bank.bank_code for bank in all_banks]
-        return Response({"bank_names":bank_names,"bank_codes":bank_codes},status=status.HTTP_200_OK) 
+        bank_names = list(banks.keys())
+    
+        return Response({"bank_names":bank_names},status=status.HTTP_200_OK) 
+    
     
     
 
 
-async def get_paystack_bank_info(session, account_number, bank_code, secret_key):
-    async with session.get(
+async def get_paystack_bank_info(bank_code, account_number):
+    
+    load_dotenv()
+
+        # Fetch the secret key from environment variables
+    secret_key = os.getenv('PRIVATE_PAYSTACK_KEY')
+    
+    response=requests.get(
         f"https://api.paystack.co/bank/resolve?account_number={account_number}&bank_code={bank_code}",
         headers={"Authorization": f"Bearer {secret_key}"},
-    ) as response:
-        return await response.json()
+    )
+    return response
 
-async def runMainScript(account_number,bank_code):
-    account_number = account_number
-    bank_code = bank_code
+# async def runMainScript(account_number,bank_code):
+#     account_number = account_number
+#     bank_code = bank_code
         
 
-    async with aiohttp.ClientSession() as session:
-        result = await get_paystack_bank_info(session, account_number, bank_code, secret_key)
-        bank_data=json.dumps(result, indent=4)
-        return bank_data
+    # async with aiohttp.ClientSession() as session:
+    #     result = await get_paystack_bank_info(session, account_number, bank_code)
+    #     bank_data=json.dumps(result, indent=4)
+    #     return bank_data
 
 
 class UserBankDetailsViewset(viewsets.ModelViewSet):
@@ -54,44 +65,25 @@ class UserBankDetailsViewset(viewsets.ModelViewSet):
     
     def create(self,request):
         serializer=self.serializer_class(data=request.data)
-       
+        bank_code=""
+
+        if serializer.is_valid():
+            load_dotenv()
+
+            # Fetch the secret key from environment variables
+            secret_key = os.getenv('PRIVATE_PAYSTACK_KEY')
+            with open("bank_codes.json","r") as bank_data_file:
+                banks=json.load(bank_data_file)
+    
+            # print(banks)
+           
             
-        load_dotenv()
-
-        # Fetch the secret key from environment variables
-        secret_key = os.getenv('PRIVATE_PAYSTACK_KEY')
-        # Fetch the secret key from environment variables
-
-
-        # # Define your base URL
-        # base_url = 'https://api.paystack.co'
-
-        # # Dummy data for serializer.validated_data to simulate request data
-        # # In a real application, replace this with actual data
-        # serializer_data = {
-        #         'account_number': str(serializer.validated_data['account_number']),
-        #         'bank_code': str(serializer.validated_data['bank_code'])
-        #     }
+            bank_code=banks[str(serializer.validated_data['bank_name'])]
+            bank_response_data=asyncio.run(get_paystack_bank_info(str(bank_code),str(serializer.validated_data['account_number'])))
+            print(bank_response_data.json())
+            return Response({"status":True,"message":"bank name fetched successfully","data":bank_response_data.json()},status=status.HTTP_200_OK)
         
-
-        # # Define endpoint and parameters
-        # endpoint = '/bank/resolve'
-        
-
-        # # Define headers
-        # headers = {
-        #     'Authorization': f'Bearer {secret_key}'
-        # }
-
-        # # Make GET request
-        # response = requests.get(f'{base_url}{endpoint}', data=data, headers=headers)
-        
-        bank_response_data=asyncio.run(runMainScript(str(serializer.initial_data['account_number']),str(serializer.initial_data['bank_code'])))
-
-        
-        return Response({"status":True,"message":"bank name fetched successfully","data":bank_response_data},status=status.HTTP_200_OK)
-        
-        
+            
 
 def get_queryset(self):
         return super().get_queryset()

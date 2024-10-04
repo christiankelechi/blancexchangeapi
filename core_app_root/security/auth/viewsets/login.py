@@ -27,7 +27,7 @@ class LoginViewSet(viewsets.ModelViewSet):
                 if valid_user.is_confirmed==False:
                     return Response({"status":False,"detail":"You need to activate your email to make use of the account","response_data":serializer.validated_data}, status=status.HTTP_400_BAD_REQUEST)
                 else:
-                    return Response({"response_data":serializer.validated_data}, status=status.HTTP_200_OK)
+                    return Response({"response_data":serializer.validated_data,"message":"Logged in successfully"}, status=status.HTTP_200_OK)
                     
         else:
             return Response({'error_msg':'User  with that email or password does not exist','status':False},status=status.HTTP_401_UNAUTHORIZED)
