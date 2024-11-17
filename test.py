@@ -2,7 +2,7 @@
 import json
 import requests
 
-bitgo_access_token = 'v2x2031d89d2b3db163ec8c97b0c363c828231cd0f60bb171aef317af53aba8efb1'
+bitgo_access_token = 'v2xf652aa6d346ebbc9d54526204c6b125fd71113bfa42c27dd200146984c59f557'
 
 
 class BitGo:
@@ -200,7 +200,8 @@ if __name__=='__main__':
     # x = bitgo.ping_express()
     # x = bitgo.list_keys('polygon')
     # x = bitgo.get_wallets()
-    x = bitgo.create_address('trx', '6664971ece8d97a8157f3a050272a1af')
+    x = bitgo.get_transactions('trx:usdt','6664971ece8d97a8157f3a050272a1af')
+
     print(x)
 
     with open('last.json','w') as f:

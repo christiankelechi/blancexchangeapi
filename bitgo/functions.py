@@ -11,24 +11,31 @@ def create_addresses(profile):
     
 
 def fetch_deposits(profile):
+    
     bitgo = BitGo()
-    addresses = profile.addresses
+    addresses = profile.addresses.all()
 
     deposits = []
     for address in addresses:
-        response = bitgo.get_transactions(address._type, wallet_id=address.wallet, address=address)
-       
+        response = bitgo.get_transactions(f'{address._type}:usdt', wallet_id=address.wallet, address=address.address)
+        print(response)
+        
         
         for transfer in response['transfers']:
             try:
                 data = {}
                 data['transaction_id'] = transfer['id']
-                data['amount'] = int(transfer['baseValueWithoutFees']) - int(transfer['feeString']) - int(transfer['payGoFee'])
+                data['amount'] = (int(transfer['baseValueWithoutFees']) - int(transfer['feeString']) - int(transfer['payGoFee'])) / 10**6
                 data['address'] = address
                 data['comment'] = transfer.get('comment')
+                data['status'] = transfer.get('state')
+                data['date'] = transfer.get('date')
+                
 
                 deposits.append(data)
-            except: continue
+            except Exception as e: 
+                print('error in fetch_deposits:', e)
+                continue
     return deposits    
 
 def update_comment(txn):

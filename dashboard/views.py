@@ -148,15 +148,18 @@ class ConfirmDepositView(APIView):
         if user.is_authenticated:
             if user.profile:
                 try:
-                    Deposit.update_deposits(user.profile)
+                    new = Deposit.update_deposits(user.profile)
                 except Exception as e:
                     return Response({'text':str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
                 
             else:
                 Profile.objects.get_or_create(user=user)
                 return Response({'text':'profile created'}, status=status.HTTP_201_CREATED)
+            
+            
             return Response({
-                'text':'your deposits are currently being updated'
+                'status': 'success',
+                'new_deposits': new
             }, status=status.HTTP_200_OK)
         return Response({
                 'text':'you are not authenticated'

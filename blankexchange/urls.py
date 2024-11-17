@@ -56,6 +56,8 @@ urlpatterns = [
     path('management/',include('management.routers')),
     path('info/',include('management.urls')),
     path('',include('core_app_root.urls')),
+    path('ngn_wallet/',include(('core_app_root.wallet_management.routers','core_app_root.wallet_management'))),
+
     
     
 ]

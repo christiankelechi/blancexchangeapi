@@ -7,6 +7,7 @@ from django_countries.fields import CountryField
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser,BaseUserManager,PermissionsMixin
 # from django.
+from django.contrib.auth.hashers import check_password
 import uuid
 from django.http import Http404
 from django.core.exceptions import ObjectDoesNotExist
@@ -82,6 +83,17 @@ class User(AbstractBaseUser, PermissionsMixin):
         if self.confirm_password:
             self.confirm_password = hashlib.sha256(str(self.confirm_password).encode()).hexdigest()
         super().save(*args, **kwargs)
+
+    def change_password(self, old_password, new_password):
+        """
+        Change the password for the user after verifying the old password.
+        """
+        if not check_password(old_password, self.password):
+            raise ValueError("The old password is incorrect.")
+        
+        self.set_password(new_password)
+        self.save()
+        return "Password updated successfully."
     @property
     def name(self):
         return f"{self.first_name} {self.last_name}"

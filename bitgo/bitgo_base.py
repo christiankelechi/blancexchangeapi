@@ -205,6 +205,6 @@ class BitGo:
 
 if __name__=='__main__':
     bitgo =  BitGo()
-    x = bitgo.get_enterprise('663b3119e13a623a0ca95e689d91d4cb')
+    x = bitgo.get_transactions('trx','6664971ece8d97a8157f3a050272a1af')
 
     print(x)

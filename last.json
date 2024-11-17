@@ -1,13 +1,151 @@
 {
-    "id": "6666bcbd1d187535da3bd56a8ad7ac79",
-    "address": "TQkcPwBdojASovvwjY6uy4SVF7B1YReSHU",
-    "chain": 0,
-    "index": 1,
-    "coin": "trx",
-    "wallet": "6664971ece8d97a8157f3a050272a1af",
-    "label": "my address ttrx:usdt 1",
-    "needsConsolidation": false,
-    "coinSpecific": {
-        "rootPub": "xpub661MyMwAqRbcFfDYNTywVGQW2LaFtJSvuGb5z7KUFnsPvDMAybBZCbbrQjGVSwFtTasWNRUWYDEFHrSkAVZiqGyvSs2fCd6uS1TYBGhQi2s"
-    }
+    "coin": "trx:usdt",
+    "transfers": [
+        {
+            "normalizedTxHash": "ad3f41b59560a39784e8019582a3ca1acab566631f587337ce9eee0413967241",
+            "entries": [
+                {
+                    "address": "TW7zoR4rau8NcbFWRMujJRZdGWvdj3iL3a",
+                    "wallet": "6664971ece8d97a8157f3a050272a1af",
+                    "value": 2200000,
+                    "valueString": "2200000",
+                    "isPayGo": false,
+                    "token": "trx:usdt",
+                    "label": "address 2024-06-10 16:23:41.923494"
+                },
+                {
+                    "address": "TEPSrSYPDSQ7yXpMFPq91Fb1QEWpMkRGfn",
+                    "value": -2200000,
+                    "valueString": "-2200000",
+                    "isPayGo": false,
+                    "token": "trx:usdt"
+                }
+            ],
+            "id": "672d3699fb21e1137965268678b18983",
+            "coin": "trx:usdt",
+            "wallet": "6664971ece8d97a8157f3a050272a1af",
+            "walletType": "hot",
+            "enterprise": "663b3119e13a623a0ca95e689d91d4cb",
+            "organization": "663b3119e13a623a0ca95ec12a375674",
+            "txid": "ad3f41b59560a39784e8019582a3ca1acab566631f587337ce9eee0413967241",
+            "txidType": "transactionHash",
+            "height": 66788938,
+            "heightId": "066788938-672d3699fb21e1137965268678b18983",
+            "date": "2024-11-07T21:52:09.000Z",
+            "confirmations": 10167,
+            "type": "receive",
+            "value": 2200000,
+            "valueString": "2200000",
+            "intendedValueString": "2200000",
+            "baseValue": 2200000,
+            "baseValueString": "2200000",
+            "baseValueWithoutFees": 2200000,
+            "baseValueWithoutFeesString": "2200000",
+            "feeString": "0",
+            "payGoFee": 0,
+            "payGoFeeString": "0",
+            "usd": 2.2022,
+            "usdRate": 1.001,
+            "state": "confirmed",
+            "instant": false,
+            "isReward": false,
+            "isUnlock": false,
+            "isFee": false,
+            "tags": [
+                "6664971ece8d97a8157f3a050272a1af",
+                "663b3119e13a623a0ca95e689d91d4cb"
+            ],
+            "history": [
+                {
+                    "date": "2024-11-07T21:52:09.000Z",
+                    "action": "confirmed",
+                    "comment": null
+                },
+                {
+                    "date": "2024-11-07T21:52:25.075Z",
+                    "action": "created",
+                    "comment": null
+                }
+            ],
+            "comment": null,
+            "usersNotified": true,
+            "metadata": [],
+            "confirmedTime": "2024-11-07T21:52:09.000Z",
+            "createdTime": "2024-11-07T21:52:25.075Z",
+            "label": "address 2024-06-10 16:23:41.923494"
+        },
+        {
+            "normalizedTxHash": "7d38559f15ac5338264bfa41631c121b2a0c6d9a4ddb1827eab981ef0ea35c5f",
+            "entries": [
+                {
+                    "address": "TW7zoR4rau8NcbFWRMujJRZdGWvdj3iL3a",
+                    "wallet": "6664971ece8d97a8157f3a050272a1af",
+                    "value": 1700979,
+                    "valueString": "1700979",
+                    "isPayGo": false,
+                    "token": "trx:usdt",
+                    "label": "address 2024-06-10 16:23:41.923494"
+                },
+                {
+                    "address": "TBA6CypYJizwA9XdC7Ubgc5F1bxrQ7SqPt",
+                    "value": -1700979,
+                    "valueString": "-1700979",
+                    "isPayGo": false,
+                    "token": "trx:usdt"
+                }
+            ],
+            "id": "66f83ba26c5dbce9897f01fb0e003cc5",
+            "coin": "trx:usdt",
+            "wallet": "6664971ece8d97a8157f3a050272a1af",
+            "walletType": "hot",
+            "enterprise": "663b3119e13a623a0ca95e689d91d4cb",
+            "organization": "663b3119e13a623a0ca95ec12a375674",
+            "txid": "7d38559f15ac5338264bfa41631c121b2a0c6d9a4ddb1827eab981ef0ea35c5f",
+            "txidType": "transactionHash",
+            "height": 65631942,
+            "heightId": "065631942-66f83ba26c5dbce9897f01fb0e003cc5",
+            "date": "2024-09-28T17:23:30.000Z",
+            "confirmations": 1167163,
+            "type": "receive",
+            "value": 1700979,
+            "valueString": "1700979",
+            "intendedValueString": "1700979",
+            "baseValue": 1700979,
+            "baseValueString": "1700979",
+            "baseValueWithoutFees": 1700979,
+            "baseValueWithoutFeesString": "1700979",
+            "feeString": "0",
+            "payGoFee": 0,
+            "payGoFeeString": "0",
+            "usd": 1.7013886396,
+            "usdRate": 1.0002408258,
+            "state": "confirmed",
+            "instant": false,
+            "isReward": false,
+            "isUnlock": false,
+            "isFee": false,
+            "tags": [
+                "6664971ece8d97a8157f3a050272a1af",
+                "663b3119e13a623a0ca95e689d91d4cb"
+            ],
+            "history": [
+                {
+                    "date": "2024-09-28T17:23:30.000Z",
+                    "action": "confirmed",
+                    "comment": null
+                },
+                {
+                    "date": "2024-09-28T17:23:46.574Z",
+                    "action": "created",
+                    "comment": null
+                }
+            ],
+            "comment": null,
+            "usersNotified": true,
+            "metadata": [],
+            "confirmedTime": "2024-09-28T17:23:30.000Z",
+            "createdTime": "2024-09-28T17:23:46.574Z",
+            "label": "address 2024-06-10 16:23:41.923494"
+        }
+    ]
 }
