@@ -116,15 +116,16 @@ WSGI_APPLICATION = 'blankexchange.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'blancexchangedb',
-        'USER': 'blancexchangedbuser',
-        'PASSWORD': 'Blancexchange$',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'NAME': 'defaultdb',
+        'USER': 'avnadmin',
+        'PASSWORD': 'AVNS_FlXDFLch7WjH-QA0OBX',
+        'HOST': 'pg-25474a9a-blankexchangeapp.a.aivencloud.com',
+        'PORT': '24936',
     }
 }
 
-# Password validation
+
+# sudo nano /etc/systemd/system/gunicorn_blancexchangeapi.socket
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
